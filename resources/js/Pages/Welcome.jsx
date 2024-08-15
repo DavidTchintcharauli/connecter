@@ -4,312 +4,276 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
     return (
         <>
             <Head title="Welcome" />
-            <div className="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
-                <div className="sm:fixed sm:top-0 sm:right-0 p-6 text-end">
-                    {auth.user ? (
-                        <Link
-                            href={route('dashboard')}
-                            className="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
-                        >
-                            Dashboard
+            <div className="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-amber-400 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
+                <div className="sm:fixed bg-sky-300 sm:top-0 sm:right-0 p-3 flex justify-between items-center space-x-4 w-full">
+                    <Link>
+                        <svg width="75" height="75" viewBox="0 0 245 252" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M132.044 98.7557L147.365 85.8999C155.827 78.7999 168.442 79.9036 175.542 88.3651C182.642 96.8266 181.538 109.442 173.077 116.542L157.756 129.397L132.044 98.7557Z" stroke="black" stroke-width="10" />
+                            <path d="M83.365 139.9L98.6859 127.044L124.397 157.686L109.077 170.542C100.615 177.642 87.9999 176.538 80.8999 168.077C73.7999 159.615 74.9036 147 83.365 139.9Z" stroke="black" stroke-width="10" />
+                            <rect x="106" y="128.07" width="25" height="10" transform="rotate(-40 106 128.07)" fill="black" />
+                            <rect x="119" y="144.07" width="25" height="10" transform="rotate(-40 119 144.07)" fill="black" />
+                            <rect x="176" y="82.0697" width="25" height="10" transform="rotate(-40 176 82.0697)" fill="black" />
+                            <rect x="55" y="182.07" width="25" height="10" transform="rotate(-40 55 182.07)" fill="black" />
+                            <path d="M230.5 163.5L228.851 167.504C218.63 192.327 199.637 212.681 175.627 224.687V224.687C158.25 233.375 138.787 237.365 119.397 236.158V236.158C70.32 233.104 29.0615 197.267 18.4729 149.249V149.249C16.188 138.888 15.3972 128.124 16.1791 117.542V117.542C19.8897 67.3258 57.435 26.146 107.096 17.8244L115 16.5L120.316 16.0911C164.192 12.716 205.683 36.461 225 76V76" stroke="black" stroke-width="30" />
+                        </svg>
+                    </Link>
+                    <div className='flex'>
+                        <Link className='mx-3'>
+                            <div>
+                                <svg width="50" height="50" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="15" y="15" width="470" height="470" rx="235" stroke="black" stroke-width="30" />
+                                    <path d="M232.424 207.985L235.713 206.643C274.054 191.007 312.739 228.299 298.52 267.187C293.756 280.216 283.556 290.525 270.578 295.427L267.255 296.682C228.455 311.337 190.753 272.86 206.194 234.366C211.001 222.381 220.467 212.861 232.424 207.985Z" stroke="black" stroke-width="46" />
+                                    <path d="M165.83 334.992L213.716 215.614L335.545 165.93L291.017 287.707L165.83 334.992Z" stroke="black" stroke-width="46" />
+                                </svg>
+                            </div>
+                            <div className='text-center'>
+                                browse
+                            </div>
                         </Link>
-                    ) : (
-                        <>
+                        <Link className='mx-3'>
+                            <div>
+                                <svg width="50" height="50" viewBox="0 0 500 433" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0 132C0 104.386 22.3858 82 50 82H450C477.614 82 500 104.386 500 132V232H0V132Z" fill="black" />
+                                    <path d="M0 283H169.5V336H334.75V283H500V383C500 410.614 477.614 433 450 433H50C22.3858 433 0 410.614 0 383V283Z" fill="black" />
+                                    <g filter="url(#filter0_d_8_14)">
+                                        <mask id="path-3-inside-1_8_14" fill="white">
+                                            <path d="M128 50C128 22.3858 150.386 0 178 0H322C349.614 0 372 22.3858 372 50V82H128V50Z" />
+                                        </mask>
+                                        <path d="M78 50C78 -5.22847 122.772 -50 178 -50H322C377.228 -50 422 -5.22847 422 50H322H178H78ZM372 82H128H372ZM78 82V50C78 -5.22847 122.772 -50 178 -50V50V82H78ZM322 -50C377.228 -50 422 -5.22847 422 50V82H322V50V-50Z" fill="black" mask="url(#path-3-inside-1_8_14)" />
+                                    </g>
+                                    <defs>
+                                        <filter id="filter0_d_8_14" x="124" y="0" width="252" height="90" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                            <feOffset dy="4" />
+                                            <feGaussianBlur stdDeviation="2" />
+                                            <feComposite in2="hardAlpha" operator="out" />
+                                            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+                                            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_8_14" />
+                                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_8_14" result="shape" />
+                                        </filter>
+                                    </defs>
+                                </svg>
+                            </div>
+                            <div className='text-center'>
+                                job
+                            </div>
+                        </Link>
+                    </div>
+                    <div className='end'>
+                        {auth.user ? (
                             <Link
-                                href={route('login')}
+                                href={route('dashboard')}
                                 className="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
                             >
-                                Log in
+                                Dashboard
                             </Link>
-
-                            <Link
-                                href={route('register')}
-                                className="ms-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
-                            >
-                                Register
-                            </Link>
-                        </>
-                    )}
+                        ) : (
+                            <div className='flex justify-center'>
+                                <div className='bg-green-500 hover:bg-green-600 m-3 rounded-full flex items-center justify-center'>
+                                    <Link
+                                        href={route('login')}
+                                        className="font-semibold  my-2 mx-4 text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
+                                    >
+                                        Log In
+                                    </Link>
+                                </div>
+                                <div className='bg-green-500 hover:bg-green-600 m-3 rounded-full flex items-center justify-center'>
+                                    <Link
+                                        href={route('register')}
+                                        className="m-4 font-semibold my-2 mx-4 text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
+                                    >
+                                        Sign Up
+                                    </Link>
+                                </div>
+                            </div>
+                        )}
+                    </div>
                 </div>
 
-                <div className="max-w-7xl mx-auto p-6 lg:p-8">
-                    <div className="flex justify-center">
-                        <svg
-                            viewBox="0 0 62 65"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="h-16 w-auto bg-gray-100 dark:bg-gray-900"
-                        >
-                            <path
-                                d="M61.8548 14.6253C61.8778 14.7102 61.8895 14.7978 61.8897 14.8858V28.5615C61.8898 28.737 61.8434 28.9095 61.7554 29.0614C61.6675 29.2132 61.5409 29.3392 61.3887 29.4265L49.9104 36.0351V49.1337C49.9104 49.4902 49.7209 49.8192 49.4118 49.9987L25.4519 63.7916C25.3971 63.8227 25.3372 63.8427 25.2774 63.8639C25.255 63.8714 25.2338 63.8851 25.2101 63.8913C25.0426 63.9354 24.8666 63.9354 24.6991 63.8913C24.6716 63.8838 24.6467 63.8689 24.6205 63.8589C24.5657 63.8389 24.5084 63.8215 24.456 63.7916L0.501061 49.9987C0.348882 49.9113 0.222437 49.7853 0.134469 49.6334C0.0465019 49.4816 0.000120578 49.3092 0 49.1337L0 8.10652C0 8.01678 0.0124642 7.92953 0.0348998 7.84477C0.0423783 7.8161 0.0598282 7.78993 0.0697995 7.76126C0.0884958 7.70891 0.105946 7.65531 0.133367 7.6067C0.152063 7.5743 0.179485 7.54812 0.20192 7.51821C0.230588 7.47832 0.256763 7.43719 0.290416 7.40229C0.319084 7.37362 0.356476 7.35243 0.388883 7.32751C0.425029 7.29759 0.457436 7.26518 0.498568 7.2415L12.4779 0.345059C12.6296 0.257786 12.8015 0.211853 12.9765 0.211853C13.1515 0.211853 13.3234 0.257786 13.475 0.345059L25.4531 7.2415H25.4556C25.4955 7.26643 25.5292 7.29759 25.5653 7.32626C25.5977 7.35119 25.6339 7.37362 25.6625 7.40104C25.6974 7.43719 25.7224 7.47832 25.7523 7.51821C25.7735 7.54812 25.8021 7.5743 25.8196 7.6067C25.8483 7.65656 25.8645 7.70891 25.8844 7.76126C25.8944 7.78993 25.9118 7.8161 25.9193 7.84602C25.9423 7.93096 25.954 8.01853 25.9542 8.10652V33.7317L35.9355 27.9844V14.8846C35.9355 14.7973 35.948 14.7088 35.9704 14.6253C35.9792 14.5954 35.9954 14.5692 36.0053 14.5405C36.0253 14.4882 36.0427 14.4346 36.0702 14.386C36.0888 14.3536 36.1163 14.3274 36.1375 14.2975C36.1674 14.2576 36.1923 14.2165 36.2272 14.1816C36.2559 14.1529 36.292 14.1317 36.3244 14.1068C36.3618 14.0769 36.3942 14.0445 36.4341 14.0208L48.4147 7.12434C48.5663 7.03694 48.7383 6.99094 48.9133 6.99094C49.0883 6.99094 49.2602 7.03694 49.4118 7.12434L61.3899 14.0208C61.4323 14.0457 61.4647 14.0769 61.5021 14.1055C61.5333 14.1305 61.5694 14.1529 61.5981 14.1803C61.633 14.2165 61.6579 14.2576 61.6878 14.2975C61.7103 14.3274 61.7377 14.3536 61.7551 14.386C61.7838 14.4346 61.8 14.4882 61.8199 14.5405C61.8312 14.5692 61.8474 14.5954 61.8548 14.6253ZM59.893 27.9844V16.6121L55.7013 19.0252L49.9104 22.3593V33.7317L59.8942 27.9844H59.893ZM47.9149 48.5566V37.1768L42.2187 40.4299L25.953 49.7133V61.2003L47.9149 48.5566ZM1.99677 9.83281V48.5566L23.9562 61.199V49.7145L12.4841 43.2219L12.4804 43.2194L12.4754 43.2169C12.4368 43.1945 12.4044 43.1621 12.3682 43.1347C12.3371 43.1097 12.3009 43.0898 12.2735 43.0624L12.271 43.0586C12.2386 43.0275 12.2162 42.9888 12.1887 42.9539C12.1638 42.9203 12.1339 42.8916 12.114 42.8567L12.1127 42.853C12.0903 42.8156 12.0766 42.7707 12.0604 42.7283C12.0442 42.6909 12.023 42.656 12.013 42.6161C12.0005 42.5688 11.998 42.5177 11.9931 42.4691C11.9881 42.4317 11.9781 42.3943 11.9781 42.3569V15.5801L6.18848 12.2446L1.99677 9.83281ZM12.9777 2.36177L2.99764 8.10652L12.9752 13.8513L22.9541 8.10527L12.9752 2.36177H12.9777ZM18.1678 38.2138L23.9574 34.8809V9.83281L19.7657 12.2459L13.9749 15.5801V40.6281L18.1678 38.2138ZM48.9133 9.14105L38.9344 14.8858L48.9133 20.6305L58.8909 14.8846L48.9133 9.14105ZM47.9149 22.3593L42.124 19.0252L37.9323 16.6121V27.9844L43.7219 31.3174L47.9149 33.7317V22.3593ZM24.9533 47.987L39.59 39.631L46.9065 35.4555L36.9352 29.7145L25.4544 36.3242L14.9907 42.3482L24.9533 47.987Z"
-                                fill="#FF2D20"
-                            />
-                        </svg>
-                    </div>
-
-                    <div className="mt-16">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-                            <a
-                                href="https://laravel.com/docs"
-                                className="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500"
-                            >
-                                <div>
-                                    <div className="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            fill="none"
-                                            viewBox="0 0 24 24"
-                                            strokeWidth="1.5"
-                                            className="w-7 h-7 stroke-red-500"
-                                        >
-                                            <path
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"
-                                            />
-                                        </svg>
-                                    </div>
-
-                                    <h2 className="mt-6 text-xl font-semibold text-gray-900 dark:text-white">
-                                        Documentation
-                                    </h2>
-
-                                    <p className="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                        Laravel has wonderful documentation covering every aspect of the framework.
-                                        Whether you are a newcomer or have prior experience with Laravel, we recommend
-                                        reading our documentation from beginning to end.
-                                    </p>
-                                </div>
-
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    strokeWidth="1.5"
-                                    className="self-center shrink-0 stroke-red-500 w-6 h-6 mx-6"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
-                                    />
+                <div className="max-w-7xl mt-20 mx-auto p-6 lg:p-8">
+                    <div>
+                        <div className='bg-gray-200 h-56 w-[593px] rounded-[40px] drop-shadow-xl'>
+                            <div className='bg-red-200 rounded-full absolute top-4 left-4 h-20 w-64 flex text-center items-center justify-center'>
+                                Search for Job
+                            </div>
+                            <div className='bg-gray-400 rounded-full absolute top-32 left-4 h-10 w-64 flex text-center items-center justify-center'>
+                                Find a person you know
+                            </div>
+                            <div className='absolute right-1 top-4'>
+                                <svg width="300" height="300" viewBox="0 0 500 548" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="500" height="548" rx="137" fill="#FFBF00" />
+                                    <path d="M279 439C279 433.477 283.477 429 289 429H463V449H289C283.477 449 279 444.523 279 439V439Z" fill="black" />
+                                    <rect x="443" y="342" width="20" height="87" fill="black" />
+                                    <rect x="47" y="235" width="20" height="87" fill="black" />
+                                    <path d="M240 158C240 152.477 244.477 148 250 148V148C255.523 148 260 152.477 260 158V235H240V158Z" fill="black" />
+                                    <rect x="320" y="322" width="143" height="20" fill="black" />
+                                    <rect x="241" y="311" width="6" height="41" fill="black" />
+                                    <rect x="270" y="311" width="6" height="41" fill="black" />
+                                    <rect x="47" y="322" width="149" height="20" fill="black" />
+                                    <path d="M247 317H262C264.761 317 267 319.239 267 322V322C267 324.761 264.761 327 262 327H247V317Z" fill="black" />
+                                    <path d="M247 335H262C264.761 335 267 337.239 267 340V340C267 342.761 264.761 345 262 345H247V335Z" fill="black" />
+                                    <path d="M196 315H216L240 311V352L216 348H196V315Z" fill="black" />
+                                    <path d="M320 348.266L301 348L277 352V311L301 314H320V348.266Z" fill="black" />
+                                    <rect x="47" y="215" width="193" height="20" fill="black" />
+                                    <g filter="url(#filter0_d_18_169)">
+                                        <path d="M72.0078 434.602H62.1406V427.992C62.1406 426.07 62.0312 424.875 61.8125 424.406C61.6094 423.922 61.1484 423.68 60.4297 423.68C59.6172 423.68 59.1016 423.969 58.8828 424.547C58.6641 425.125 58.5547 426.375 58.5547 428.297V445.922C58.5547 447.766 58.6641 448.969 58.8828 449.531C59.1016 450.094 59.5938 450.375 60.3594 450.375C61.0938 450.375 61.5703 450.094 61.7891 449.531C62.0234 448.969 62.1406 447.648 62.1406 445.57V440.812H72.0078V442.289C72.0078 446.211 71.7266 448.992 71.1641 450.633C70.6172 452.273 69.3906 453.711 67.4844 454.945C65.5938 456.18 63.2578 456.797 60.4766 456.797C57.5859 456.797 55.2031 456.273 53.3281 455.227C51.4531 454.18 50.2109 452.734 49.6016 450.891C48.9922 449.031 48.6875 446.242 48.6875 442.523V431.438C48.6875 428.703 48.7812 426.656 48.9688 425.297C49.1562 423.922 49.7109 422.602 50.6328 421.336C51.5703 420.07 52.8594 419.078 54.5 418.359C56.1562 417.625 58.0547 417.258 60.1953 417.258C63.1016 417.258 65.5 417.82 67.3906 418.945C69.2812 420.07 70.5234 421.477 71.1172 423.164C71.7109 424.836 72.0078 427.445 72.0078 430.992V434.602ZM96.6875 435.82V443.438C96.6875 446.234 96.5469 448.289 96.2656 449.602C95.9844 450.898 95.3828 452.117 94.4609 453.258C93.5391 454.383 92.3516 455.219 90.8984 455.766C89.4609 456.297 87.8047 456.562 85.9297 456.562C83.8359 456.562 82.0625 456.336 80.6094 455.883C79.1562 455.414 78.0234 454.719 77.2109 453.797C76.4141 452.859 75.8438 451.734 75.5 450.422C75.1562 449.094 74.9844 447.109 74.9844 444.469V436.5C74.9844 433.609 75.2969 431.352 75.9219 429.727C76.5469 428.102 77.6719 426.797 79.2969 425.812C80.9219 424.828 83 424.336 85.5312 424.336C87.6562 424.336 89.4766 424.656 90.9922 425.297C92.5234 425.922 93.7031 426.742 94.5312 427.758C95.3594 428.773 95.9219 429.82 96.2188 430.898C96.5312 431.977 96.6875 433.617 96.6875 435.82ZM87.2188 433.477C87.2188 431.883 87.1328 430.883 86.9609 430.477C86.7891 430.055 86.4219 429.844 85.8594 429.844C85.2969 429.844 84.9219 430.055 84.7344 430.477C84.5469 430.883 84.4531 431.883 84.4531 433.477V447.516C84.4531 448.984 84.5469 449.945 84.7344 450.398C84.9219 450.836 85.2891 451.055 85.8359 451.055C86.3984 451.055 86.7656 450.852 86.9375 450.445C87.125 450.039 87.2188 449.164 87.2188 447.82V433.477ZM109.461 424.898L109.297 427.758C109.984 426.617 110.82 425.766 111.805 425.203C112.805 424.625 113.953 424.336 115.25 424.336C116.875 424.336 118.203 424.719 119.234 425.484C120.266 426.25 120.93 427.219 121.227 428.391C121.523 429.547 121.672 431.484 121.672 434.203V456H112.203V434.461C112.203 432.32 112.133 431.016 111.992 430.547C111.852 430.078 111.461 429.844 110.82 429.844C110.148 429.844 109.727 430.117 109.555 430.664C109.383 431.195 109.297 432.633 109.297 434.977V456H99.8281V424.898H109.461ZM134.586 424.898L134.422 427.758C135.109 426.617 135.945 425.766 136.93 425.203C137.93 424.625 139.078 424.336 140.375 424.336C142 424.336 143.328 424.719 144.359 425.484C145.391 426.25 146.055 427.219 146.352 428.391C146.648 429.547 146.797 431.484 146.797 434.203V456H137.328V434.461C137.328 432.32 137.258 431.016 137.117 430.547C136.977 430.078 136.586 429.844 135.945 429.844C135.273 429.844 134.852 430.117 134.68 430.664C134.508 431.195 134.422 432.633 134.422 434.977V456H124.953V424.898H134.586ZM171.523 441H159.266V447.727C159.266 449.133 159.367 450.039 159.57 450.445C159.773 450.852 160.164 451.055 160.742 451.055C161.461 451.055 161.938 450.789 162.172 450.258C162.422 449.711 162.547 448.664 162.547 447.117V443.016H171.523V445.312C171.523 447.234 171.398 448.711 171.148 449.742C170.914 450.773 170.352 451.875 169.461 453.047C168.57 454.219 167.438 455.102 166.062 455.695C164.703 456.273 162.992 456.562 160.93 456.562C158.93 456.562 157.164 456.273 155.633 455.695C154.102 455.117 152.906 454.328 152.047 453.328C151.203 452.312 150.617 451.203 150.289 450C149.961 448.781 149.797 447.016 149.797 444.703V435.633C149.797 432.914 150.164 430.773 150.898 429.211C151.633 427.633 152.836 426.43 154.508 425.602C156.18 424.758 158.102 424.336 160.273 424.336C162.93 424.336 165.117 424.844 166.836 425.859C168.57 426.859 169.781 428.195 170.469 429.867C171.172 431.523 171.523 433.859 171.523 436.875V441ZM162.031 435.938V433.664C162.031 432.055 161.945 431.016 161.773 430.547C161.602 430.078 161.25 429.844 160.719 429.844C160.062 429.844 159.656 430.047 159.5 430.453C159.344 430.844 159.266 431.914 159.266 433.664V435.938H162.031ZM195.57 436.641H186.641V433.055C186.641 431.805 186.539 430.961 186.336 430.523C186.133 430.07 185.758 429.844 185.211 429.844C184.664 429.844 184.297 430.039 184.109 430.43C183.922 430.82 183.828 431.695 183.828 433.055V447.727C183.828 448.836 183.969 449.672 184.25 450.234C184.531 450.781 184.945 451.055 185.492 451.055C186.133 451.055 186.562 450.766 186.781 450.188C187.016 449.609 187.133 448.516 187.133 446.906V443.203H195.57C195.555 445.688 195.461 447.555 195.289 448.805C195.133 450.039 194.609 451.312 193.719 452.625C192.844 453.922 191.695 454.906 190.273 455.578C188.852 456.234 187.094 456.562 185 456.562C182.328 456.562 180.211 456.109 178.648 455.203C177.086 454.281 175.977 453 175.32 451.359C174.68 449.703 174.359 447.359 174.359 444.328V435.492C174.359 432.852 174.625 430.859 175.156 429.516C175.688 428.172 176.82 426.977 178.555 425.93C180.289 424.867 182.398 424.336 184.883 424.336C187.352 424.336 189.461 424.859 191.211 425.906C192.961 426.953 194.125 428.273 194.703 429.867C195.281 431.461 195.57 433.719 195.57 436.641ZM208.391 420.75V425.648H210.945V430.57H208.391V447.211C208.391 449.258 208.492 450.398 208.695 450.633C208.914 450.867 209.797 450.984 211.344 450.984V456H207.523C205.367 456 203.828 455.914 202.906 455.742C201.984 455.555 201.172 455.141 200.469 454.5C199.766 453.844 199.328 453.102 199.156 452.273C198.984 451.43 198.898 449.461 198.898 446.367V430.57H196.859V425.648H198.898V420.75H208.391ZM222.781 418.055V423H213.031V418.055H222.781ZM222.781 424.898V456H213.031V424.898H222.781ZM247.625 435.82V443.438C247.625 446.234 247.484 448.289 247.203 449.602C246.922 450.898 246.32 452.117 245.398 453.258C244.477 454.383 243.289 455.219 241.836 455.766C240.398 456.297 238.742 456.562 236.867 456.562C234.773 456.562 233 456.336 231.547 455.883C230.094 455.414 228.961 454.719 228.148 453.797C227.352 452.859 226.781 451.734 226.438 450.422C226.094 449.094 225.922 447.109 225.922 444.469V436.5C225.922 433.609 226.234 431.352 226.859 429.727C227.484 428.102 228.609 426.797 230.234 425.812C231.859 424.828 233.938 424.336 236.469 424.336C238.594 424.336 240.414 424.656 241.93 425.297C243.461 425.922 244.641 426.742 245.469 427.758C246.297 428.773 246.859 429.82 247.156 430.898C247.469 431.977 247.625 433.617 247.625 435.82ZM238.156 433.477C238.156 431.883 238.07 430.883 237.898 430.477C237.727 430.055 237.359 429.844 236.797 429.844C236.234 429.844 235.859 430.055 235.672 430.477C235.484 430.883 235.391 431.883 235.391 433.477V447.516C235.391 448.984 235.484 449.945 235.672 450.398C235.859 450.836 236.227 451.055 236.773 451.055C237.336 451.055 237.703 450.852 237.875 450.445C238.062 450.039 238.156 449.164 238.156 447.82V433.477ZM260.398 424.898L260.234 427.758C260.922 426.617 261.758 425.766 262.742 425.203C263.742 424.625 264.891 424.336 266.188 424.336C267.812 424.336 269.141 424.719 270.172 425.484C271.203 426.25 271.867 427.219 272.164 428.391C272.461 429.547 272.609 431.484 272.609 434.203V456H263.141V434.461C263.141 432.32 263.07 431.016 262.93 430.547C262.789 430.078 262.398 429.844 261.758 429.844C261.086 429.844 260.664 430.117 260.492 430.664C260.32 431.195 260.234 432.633 260.234 434.977V456H250.766V424.898H260.398Z" fill="black" />
+                                    </g>
+                                    <g filter="url(#filter1_d_18_169)">
+                                        <rect x="229.5" y="95.5" width="41" height="41" rx="20.5" stroke="black" stroke-width="9" shape-rendering="crispEdges" />
+                                    </g>
+                                    <path d="M292.1 123C295.358 123 298.035 120.35 297.666 117.113C297.149 112.568 296.034 108.111 294.346 103.866C291.934 97.7995 288.398 92.2876 283.941 87.6447C279.484 83.0017 274.192 79.3188 268.369 76.806C262.545 74.2933 256.303 73 250 73C243.697 73 237.455 74.2933 231.631 76.806C225.808 79.3188 220.516 83.0017 216.059 87.6447C211.602 92.2876 208.066 97.7996 205.654 103.866C203.966 108.111 202.851 112.569 202.334 117.113C201.965 120.35 204.642 123 207.9 123V123C211.159 123 213.755 120.344 214.243 117.122C214.686 114.193 215.461 111.322 216.556 108.57C218.375 103.995 221.041 99.8378 224.403 96.3363C227.764 92.8347 231.755 90.0572 236.147 88.1622C240.539 86.2671 245.246 85.2918 250 85.2918C254.754 85.2918 259.461 86.2671 263.853 88.1622C268.245 90.0572 272.236 92.8347 275.597 96.3363C278.959 99.8378 281.625 103.995 283.444 108.57C284.539 111.322 285.314 114.193 285.757 117.122C286.245 120.344 288.841 123 292.1 123V123Z" fill="black" />
+                                    <path d="M314.031 108C317.88 108 321.066 104.851 320.311 101.076C319.474 96.8911 317.88 92.7874 315.557 88.8658C311.964 82.7995 306.698 77.2876 300.058 72.6447C293.419 68.0017 285.537 64.3188 276.862 61.806C268.187 59.2933 258.89 58 249.5 58C240.11 58 230.813 59.2933 222.138 61.806C213.463 64.3188 205.581 68.0017 198.942 72.6447C192.302 77.2876 187.036 82.7996 183.443 88.8658C181.12 92.7875 179.526 96.8911 178.689 101.076C177.934 104.851 181.12 108 184.969 108V108C188.818 108 191.861 104.836 192.79 101.101C193.514 98.1904 194.696 95.3378 196.32 92.5958C199.213 87.7121 203.453 83.2747 208.798 79.5368C214.143 75.799 220.488 72.834 227.472 70.8111C234.456 68.7882 241.941 67.747 249.5 67.747C257.059 67.747 264.544 68.7882 271.528 70.8111C278.512 72.834 284.857 75.799 290.202 79.5368C295.547 83.2747 299.787 87.7121 302.68 92.5958C304.304 95.3378 305.486 98.1904 306.21 101.101C307.139 104.836 310.182 108 314.031 108V108Z" fill="black" />
+                                    <path d="M333.935 91C338.942 91 343.111 86.8435 341.514 82.0986C340.337 78.5986 338.465 75.1677 335.921 71.8658C331.247 65.7995 324.397 60.2876 315.761 55.6447C307.125 51.0017 296.873 47.3188 285.59 44.806C274.306 42.2933 262.213 41 250 41C237.787 41 225.694 42.2933 214.41 44.806C203.127 47.3188 192.875 51.0017 184.239 55.6447C175.603 60.2876 168.753 65.7996 164.079 71.8658C161.535 75.1677 159.663 78.5986 158.486 82.0986C156.889 86.8435 161.058 91 166.065 91V91C171.071 91 175.019 86.7999 176.949 82.1804C177.886 79.9351 179.183 77.7319 180.829 75.5958C184.591 70.7121 190.106 66.2747 197.058 62.5368C204.011 58.799 212.265 55.834 221.348 53.8111C230.432 51.7882 240.168 50.747 250 50.747C259.832 50.747 269.568 51.7882 278.652 53.8111C287.735 55.834 295.989 58.799 302.942 62.5368C309.894 66.2747 315.409 70.7121 319.171 75.5958C320.817 77.7319 322.114 79.9351 323.051 82.1804C324.981 86.7999 328.929 91 333.935 91V91Z" fill="black" />
+                                    <defs>
+                                        <filter id="filter0_d_18_169" x="44.6875" y="417.258" width="231.922" height="47.5391" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                            <feOffset dy="4" />
+                                            <feGaussianBlur stdDeviation="2" />
+                                            <feComposite in2="hardAlpha" operator="out" />
+                                            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+                                            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_18_169" />
+                                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_18_169" result="shape" />
+                                        </filter>
+                                        <filter id="filter1_d_18_169" x="221" y="91" width="58" height="58" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                            <feOffset dy="4" />
+                                            <feGaussianBlur stdDeviation="2" />
+                                            <feComposite in2="hardAlpha" operator="out" />
+                                            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+                                            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_18_169" />
+                                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_18_169" result="shape" />
+                                        </filter>
+                                    </defs>
                                 </svg>
-                            </a>
-
-                            <a
-                                href="https://laracasts.com"
-                                className="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500"
-                            >
-                                <div>
-                                    <div className="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            fill="none"
-                                            viewBox="0 0 24 24"
-                                            strokeWidth="1.5"
-                                            className="w-7 h-7 stroke-red-500"
-                                        >
-                                            <path
-                                                strokeLinecap="round"
-                                                d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z"
-                                            />
-                                        </svg>
-                                    </div>
-
-                                    <h2 className="mt-6 text-xl font-semibold text-gray-900 dark:text-white">
-                                        Laracasts
-                                    </h2>
-
-                                    <p className="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                        Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript
-                                        development. Check them out, see for yourself, and massively level up your
-                                        development skills in the process.
+                            </div>
+                        </div>
+                        <div className='bg-yellow-400 w-80 rounded-[40px] text-center items-center mt-32 ml-32 flex justify-center text-[50px]'>
+                            Connecter
+                        </div>
+                        <div className='bg-red-200 mt-10 rounded-[40px] grid grid-cols-3 gap-4 p-4'>
+                            <div className='flex flex-col items-center justify-center col-span-1 text-center'>
+                                <div className='font-bold'>
+                                    <p className='text-[30px]'>
+                                        Explore topics
                                     </p>
-                                </div>
-
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    strokeWidth="1.5"
-                                    className="self-center shrink-0 stroke-red-500 w-6 h-6 mx-6"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
-                                    />
-                                </svg>
-                            </a>
-
-                            <a
-                                href="https://laravel-news.com"
-                                className="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500"
-                            >
-                                <div>
-                                    <div className="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            fill="none"
-                                            viewBox="0 0 24 24"
-                                            strokeWidth="1.5"
-                                            className="w-7 h-7 stroke-red-500"
-                                        >
-                                            <path
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z"
-                                            />
-                                        </svg>
-                                    </div>
-
-                                    <h2 className="mt-6 text-xl font-semibold text-gray-900 dark:text-white">
-                                        Laravel News
-                                    </h2>
-
-                                    <p className="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                        Laravel News is a community driven portal and newsletter aggregating all of the
-                                        latest and most important news in the Laravel ecosystem, including new package
-                                        releases and tutorials.
+                                    <p className='text-[30px]'>
+                                        you are
                                     </p>
-                                </div>
-
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    strokeWidth="1.5"
-                                    className="self-center shrink-0 stroke-red-500 w-6 h-6 mx-6"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
-                                    />
-                                </svg>
-                            </a>
-
-                            <div className="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
-                                <div>
-                                    <div className="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            fill="none"
-                                            viewBox="0 0 24 24"
-                                            strokeWidth="1.5"
-                                            className="w-7 h-7 stroke-red-500"
-                                        >
-                                            <path
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                d="M6.115 5.19l.319 1.913A6 6 0 008.11 10.36L9.75 12l-.387.775c-.217.433-.132.956.21 1.298l1.348 1.348c.21.21.329.497.329.795v1.089c0 .426.24.815.622 1.006l.153.076c.433.217.956.132 1.298-.21l.723-.723a8.7 8.7 0 002.288-4.042 1.087 1.087 0 00-.358-1.099l-1.33-1.108c-.251-.21-.582-.299-.905-.245l-1.17.195a1.125 1.125 0 01-.98-.314l-.295-.295a1.125 1.125 0 010-1.591l.13-.132a1.125 1.125 0 011.3-.21l.603.302a.809.809 0 001.086-1.086L14.25 7.5l1.256-.837a4.5 4.5 0 001.528-1.732l.146-.292M6.115 5.19A9 9 0 1017.18 4.64M6.115 5.19A8.965 8.965 0 0112 3c1.929 0 3.716.607 5.18 1.64"
-                                            />
-                                        </svg>
-                                    </div>
-
-                                    <h2 className="mt-6 text-xl font-semibold text-gray-900 dark:text-white">
-                                        Vibrant Ecosystem
-                                    </h2>
-
-                                    <p className="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                        Laravel's robust library of first-party tools and libraries, such as{' '}
-                                        <a
-                                            href="https://forge.laravel.com"
-                                            className="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
-                                        >
-                                            Forge
-                                        </a>
-                                        ,{' '}
-                                        <a
-                                            href="https://vapor.laravel.com"
-                                            className="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
-                                        >
-                                            Vapor
-                                        </a>
-                                        ,{' '}
-                                        <a
-                                            href="https://nova.laravel.com"
-                                            className="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
-                                        >
-                                            Nova
-                                        </a>
-                                        , and{' '}
-                                        <a
-                                            href="https://envoyer.io"
-                                            className="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
-                                        >
-                                            Envoyer
-                                        </a>{' '}
-                                        help you take your projects to the next level. Pair them with powerful open
-                                        source libraries like{' '}
-                                        <a
-                                            href="https://laravel.com/docs/billing"
-                                            className="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
-                                        >
-                                            Cashier
-                                        </a>
-                                        ,{' '}
-                                        <a
-                                            href="https://laravel.com/docs/dusk"
-                                            className="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
-                                        >
-                                            Dusk
-                                        </a>
-                                        ,{' '}
-                                        <a
-                                            href="https://laravel.com/docs/broadcasting"
-                                            className="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
-                                        >
-                                            Echo
-                                        </a>
-                                        ,{' '}
-                                        <a
-                                            href="https://laravel.com/docs/horizon"
-                                            className="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
-                                        >
-                                            Horizon
-                                        </a>
-                                        ,{' '}
-                                        <a
-                                            href="https://laravel.com/docs/sanctum"
-                                            className="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
-                                        >
-                                            Sanctum
-                                        </a>
-                                        ,{' '}
-                                        <a
-                                            href="https://laravel.com/docs/telescope"
-                                            className="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
-                                        >
-                                            Telescope
-                                        </a>
-                                        , and more.
+                                    <p className='text-[30px]'>
+                                        interested
                                     </p>
                                 </div>
                             </div>
+                            <div className='flex flex-col items-center justify-center col-span-1 space-y-4'>
+                                <div className="bg-gray-200 rounded-3xl p-4">workers</div>
+                                <div className="bg-gray-200 rounded-3xl p-4">workers</div>
+                                <div className="bg-gray-200 rounded-3xl p-4">workers</div>
+                            </div>
+                            <div className='flex flex-col items-center justify-center col-span-1 space-y-4'>
+                                <div className="bg-gray-200 rounded-3xl p-4">workers</div>
+                                <div className="bg-gray-200 rounded-3xl p-4">workers</div>
+                                <div className="bg-gray-200 rounded-3xl p-4">workers</div>
+                            </div>
                         </div>
-                    </div>
 
+
+                    </div>
                     <div className="flex justify-center mt-16 px-6 sm:items-center sm:justify-between">
                         <div className="text-center text-sm sm:text-start">&nbsp;</div>
-
-                        <div className="text-center text-sm text-gray-500 dark:text-gray-400 sm:text-end sm:ms-0">
-                            Laravel v{laravelVersion} (PHP v{phpVersion})
-                        </div>
                     </div>
                 </div>
+                <div className='sm:fixed bg-sky-300 sm:bottom-0 sm:right-0 p-3 flex justify-between items-center space-x-4 w-full'>
+                    <div className='flex'>
+                        <Link className='mx-3'>
+                            <div className='justify-center flex'>
+                                <svg width="50" height="50" viewBox="0 0 500 501" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0 0H500V130.5V218L475 100H425V292L325 100H275V323L225 350H75V275H175V225H75V150H225V100H25V400H225V350L275 323V400H325V208L425 400H475V100L500 218V372.5V500.5H0V0Z" fill="black" />
+                                </svg>
+                            </div>
+                            <div className='text-center'>
+                                English
+                            </div>
+                        </Link>
+                        <Link className='mx-3'>
+                            <div className='justify-center flex'>
+                                <svg width="50" height="50" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="25" y="25" width="450" height="450" rx="225" stroke="black" stroke-width="50" />
+                                    <path d="M181.243 148.435C185.046 141.542 190.135 135.443 196.234 130.467C202.678 125.21 210.12 121.313 218.11 119.011L223.457 117.47C231.446 115.168 239.719 114 248.033 114H259.861C267.888 114 275.848 115.452 283.357 118.286C293.307 122.041 302.213 128.125 309.327 136.03L310.678 137.531C317.48 145.089 322.58 154.019 325.633 163.717C328.19 171.84 329.266 180.355 328.809 188.858L327.944 204.95C327.324 216.47 323.858 227.657 317.854 237.508L317.217 238.554C310.866 248.977 301.727 257.417 290.833 262.921L279.122 268.839C267.156 274.885 258.945 286.447 257.181 299.738L254.251 321.807C253.249 329.359 246.809 335 239.192 335C230.802 335 224 328.198 224 319.808V288.864C224 268.472 237.387 250.499 256.925 244.66L262.006 243.142C265.652 242.052 269.131 240.47 272.348 238.438C281.431 232.701 287.954 223.684 290.56 213.261L292.357 206.071C294.102 199.094 294.437 191.839 293.343 184.731L293.019 182.625C292.344 178.237 290.962 173.988 288.926 170.044C285.696 163.787 280.911 158.466 275.03 154.593L274.443 154.206C267.305 149.505 258.945 147 250.397 147H248.662C241.313 147 234.056 148.636 227.418 151.789L225.119 152.881C220.098 155.266 215.645 158.698 212.061 162.947L210.257 165.084C206.188 169.907 203.729 175.882 203.226 182.173L202.148 195.645C201.5 203.752 194.732 210 186.599 210C177.984 210 171 203.016 171 194.401V175.807C171 170.03 172.464 164.347 175.254 159.289L181.243 148.435Z" fill="black" />
+                                    <path d="M181.243 148.435C185.046 141.542 190.135 135.443 196.234 130.467C202.678 125.21 210.12 121.313 218.11 119.011L223.457 117.47C231.446 115.168 239.719 114 248.033 114H259.861C267.888 114 275.848 115.452 283.357 118.286C293.307 122.041 302.213 128.125 309.327 136.03L310.678 137.531C317.48 145.089 322.58 154.019 325.633 163.717C328.19 171.84 329.266 180.355 328.809 188.858L327.944 204.95C327.324 216.47 323.858 227.657 317.854 237.508L317.217 238.554C310.866 248.977 301.727 257.417 290.833 262.921L279.122 268.839C267.156 274.885 258.945 286.447 257.181 299.738L254.251 321.807C253.249 329.359 246.809 335 239.192 335C230.802 335 224 328.198 224 319.808V288.864C224 268.472 237.387 250.499 256.925 244.66L262.006 243.142C265.652 242.052 269.131 240.47 272.348 238.438C281.431 232.701 287.954 223.684 290.56 213.261L292.357 206.071C294.102 199.094 294.437 191.839 293.343 184.731L293.019 182.625C292.344 178.237 290.962 173.988 288.926 170.044C285.696 163.787 280.911 158.466 275.03 154.593L274.443 154.206C267.305 149.505 258.945 147 250.397 147H248.662C241.313 147 234.056 148.636 227.418 151.789L225.119 152.881C220.098 155.266 215.645 158.698 212.061 162.947L210.257 165.084C206.188 169.907 203.729 175.882 203.226 182.173L202.148 195.645C201.5 203.752 194.732 210 186.599 210C177.984 210 171 203.016 171 194.401V175.807C171 170.03 172.464 164.347 175.254 159.289L181.243 148.435Z" stroke="black" />
+                                    <rect x="219" y="345.5" width="40" height="40" rx="20" fill="black" />
+                                </svg>
+                            </div>
+                            <div className='text-center'>
+                                Help & Support
+                            </div>
+                        </Link>
+                        <Link className='mx-3'>
+                            <div className='justify-center flex'>
+                                <svg width="50" height="50" viewBox="0 0 500 501" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0 0.5H500V125.5H274L274.5 123.5L275 120.5V116.5L274.5 113.5L274 111.5L272.5 107.5L270 103.5L268 101L265 98.5L260.5 95.5L256 94L251 93.5H248L245 94L239.5 95.5L235 98.5L231 102L228 106.5L226.5 109.5L226 111.5L225.5 113.5L225 115.5V118V121L225.5 123L226 125.5L227 128.5L228.5 131.5L230 133.5L232 136L232.5 136.5L233.5 137.5L235 138.5L238 140.5L240 141.5L243 142.5L245 143L249 143.5H251L255 143L258.5 142.5L265.5 138.5L270 134L273 128.5L274 125.5L277 192H227V413H277V192L274 125.5H500V500.5H0V0.5Z" fill="black" />
+                                </svg>
+                            </div>
+                            <div className='text-center'>
+                                About Us
+                            </div>
+                        </Link>
+                        <Link className='mx-3'>
+                            <div className='justify-center flex'>
+                                <svg width="50" height="50" viewBox="0 0 543 451" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="205.939" y="21.1428" width="125.29" height="186.764" rx="13" transform="rotate(33.7962 205.939 21.1428)" fill="black" />
+                                    <rect x="411.663" y="316.502" width="99.1247" height="37.8653" rx="4" transform="rotate(-59.1985 411.663 316.502)" fill="black" />
+                                    <rect x="213.913" width="137.094" height="19.6187" rx="9.80934" transform="rotate(33.7962 213.913 0)" fill="black" />
+                                    <rect x="95.9126" y="175" width="137.094" height="19.6187" rx="9.80934" transform="rotate(33.7962 95.9126 175)" fill="black" />
+                                    <rect x="5" y="407" width="306" height="39" rx="12" stroke="black" stroke-width="10" />
+                                    <rect x="21" y="369" width="272" height="33" rx="16.5" fill="black" />
+                                    <rect x="21" y="369" width="272" height="33" rx="16.5" stroke="#765959" />
+                                    <path d="M205.324 138.138C201.93 135.19 205.229 129.75 209.411 131.396L452.516 227.035C454.824 227.942 455.757 230.71 454.472 232.831L408.579 308.522C407.294 310.642 404.408 311.094 402.536 309.467L205.324 138.138Z" fill="black" />
+                                </svg>
+                            </div>
+                            <div className='text-center'>
+                                Rules
+                            </div>
+                        </Link>
+                    </div>
+                    <div className='flex'>
+                        <Link className='mx-3'>
+                            <div className='justify-center flex'>
+                                <svg width="50" height="50" viewBox="0 0 652 847" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M545 331C545 298.17 539.335 265.661 528.33 235.329C517.324 204.998 501.192 177.438 480.856 154.223C460.52 131.009 436.378 112.594 409.808 100.03C383.237 87.4664 354.759 81 326 81C297.24 81 268.763 87.4664 242.192 100.03C215.622 112.594 191.48 131.009 171.144 154.223C150.808 177.438 134.676 204.998 123.67 235.329C112.665 265.661 107 298.17 107 331L326 331H545Z" fill="black" />
+                                    <path d="M458.242 14.3247C464.809 6.49777 476.478 5.47687 484.305 12.0444V12.0444C492.132 18.6119 493.153 30.2809 486.585 38.1078L421.344 115.86L393 92.0766L458.242 14.3247Z" fill="black" />
+                                    <path d="M166.042 38.2026C159.475 30.3757 160.496 18.7067 168.322 12.1392V12.1392C176.149 5.57166 187.818 6.59256 194.386 14.4194L259.629 92.173L231.285 115.956L166.042 38.2026Z" fill="black" />
+                                    <path d="M107 360H545V613C545 640.614 522.614 663 495 663H157C129.386 663 107 640.614 107 613V360Z" fill="black" />
+                                    <rect x="569" y="360" width="83" height="303" rx="41.5" fill="black" />
+                                    <rect y="360" width="83" height="303" rx="41.5" fill="black" />
+                                    <rect x="389" y="631" width="83" height="216" rx="41.5" fill="black" />
+                                    <rect x="177" y="631" width="83" height="216" rx="41.5" fill="black" />
+                                </svg>
+                            </div>
+                            <div className='text-center'>
+                                Android App
+                            </div>
+                        </Link>
+                        <Link className='mx-3'>
+                            <div className='justify-center flex'>
+                                <svg width="50" height="50" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="25" y="25" width="450" height="450" rx="225" stroke="black" stroke-width="50" />
+                                    <path d="M301.19 78L274.622 113.493L249.894 146.216L248.934 142.302C242.355 115.483 258.763 88.4082 285.582 81.8291L301.19 78Z" fill="black" />
+                                    <path d="M249.878 146.243L276.446 110.751L301.174 78.0274L302.135 81.9413C308.714 108.76 292.306 135.835 265.487 142.414L249.878 146.243Z" fill="black" />
+                                    <path d="M122.592 169.152C126.174 163.089 130.701 157.637 136 153V153L145.5 145.5L151.609 141.66C159.189 136.896 167.169 132.801 175.46 129.424L176.5 129L182.672 126.805C186.042 125.607 189.558 124.869 193.125 124.609L193.947 124.549C198.928 124.187 203.929 124.867 208.631 126.547V126.547C213.164 128.166 217.325 130.679 220.868 133.938L228 140.5L241.05 151.686C241.682 152.228 242.263 152.826 242.786 153.473V153.473C247.944 159.86 257.533 160.281 263.231 154.371L265.136 152.396C265.711 151.8 266.332 151.248 266.992 150.748L280.5 140.5L291.002 134.307C296.965 130.79 303.436 128.219 310.187 126.685L312.167 126.235C318.67 124.757 325.384 124.457 331.992 125.35V125.35C337.631 126.112 343.12 127.733 348.268 130.155L349.938 130.942C354.946 133.298 359.533 136.458 363.52 140.297L368.89 145.468C370.282 146.809 371.388 148.418 372.141 150.198L375.526 158.198C376.098 159.55 375.675 161.119 374.5 162V162L371 165L368 167.5L364 171L359.5 175L355.5 179.5L353.217 182.436C352.407 183.477 351.683 184.582 351.051 185.74V185.74C349.694 188.228 348.78 190.932 348.349 193.733L348.304 194.024C348.102 195.339 348 196.668 348 197.999V201V208.5V209.329C348 213.762 348.503 218.181 349.5 222.5V222.5L351 228.5L354 238L355.954 242.188C356.974 244.372 358.437 246.32 360.251 247.907V247.907C361.082 248.634 361.98 249.28 362.934 249.836L367.5 252.5L372 254.5L377 256.5L385.5 260L395.208 263.883C395.402 263.961 395.604 264.017 395.81 264.052V264.052C397.322 264.304 398.378 265.688 398.222 267.213L396.71 281.952C396.57 283.313 396.282 284.655 395.849 285.954L391 300.5L386 320L379 338.5L371 357L367.22 366.45C364.427 373.432 360.463 379.887 355.499 385.535L354.336 386.859C350.47 391.258 345.927 395.013 340.879 397.983V397.983C334.686 401.626 327.841 404.023 320.728 405.039L319.378 405.232C313.49 406.073 307.511 406.063 301.626 405.201L298.228 404.704C292.762 403.904 287.409 402.463 282.279 400.412L279.824 399.43C276.618 398.147 273.279 397.225 269.87 396.679L269.71 396.654C264.934 395.889 260.066 395.889 255.29 396.654V396.654C251.775 397.216 248.339 398.187 245.05 399.548L240.782 401.314C237.27 402.768 233.62 403.864 229.888 404.586L229.249 404.71C223.131 405.894 216.852 405.99 210.701 404.992V404.992C204.614 404.005 198.746 401.963 193.361 398.957L190.261 397.227C183.464 393.433 177.316 388.579 172.049 382.847L163 373L145.5 352L135.753 338.414C131.257 332.147 127.239 325.551 123.731 318.682L117 305.5L111.082 290.062C107.375 280.392 104.893 270.296 103.693 260.009V260.009C102.568 250.37 102.578 240.631 103.721 230.994L104.12 227.63C105.039 219.888 106.548 212.227 108.635 204.715L110.5 198L116.5 181.5L121.5 171L122.592 169.152Z" fill="black" />
+                                </svg>
+                            </div>
+                            <div className='text-center'>
+                                IOS App
+                            </div>
+                        </Link>
+                    </div>
+                </div>
+                
             </div>
 
-            <style>{`
-                .bg-dots-darker {
-                    background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.22676 0C1.91374 0 2.45351 0.539773 2.45351 1.22676C2.45351 1.91374 1.91374 2.45351 1.22676 2.45351C0.539773 2.45351 0 1.91374 0 1.22676C0 0.539773 0.539773 0 1.22676 0Z' fill='rgba(0,0,0,0.07)'/%3E%3C/svg%3E");
-                }
-                @media (prefers-color-scheme: dark) {
-                    .dark\\:bg-dots-lighter {
-                        background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.22676 0C1.91374 0 2.45351 0.539773 2.45351 1.22676C2.45351 1.91374 1.91374 2.45351 1.22676 2.45351C0.539773 2.45351 0 1.91374 0 1.22676C0 0.539773 0.539773 0 1.22676 0Z' fill='rgba(255,255,255,0.07)'/%3E%3C/svg%3E");
-                    }
-                }
-            `}</style>
         </>
     );
 }
