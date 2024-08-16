@@ -6,6 +6,8 @@ import InputLabel from '@/Components/InputLabel';
 import PrimaryButton from '@/Components/PrimaryButton';
 import TextInput from '@/Components/TextInput';
 import { Head, Link, useForm } from '@inertiajs/react';
+import Header from '@/Components/Header';
+import Footer from '@/Components/Footer';
 
 export default function Login({ status, canResetPassword }) {
     const { data, setData, post, processing, errors, reset } = useForm({
@@ -29,7 +31,7 @@ export default function Login({ status, canResetPassword }) {
     return (
         <GuestLayout>
             <Head title="Log in" />
-
+            <Header/>
             {status && <div className="mb-4 font-medium text-sm text-green-600">{status}</div>}
 
             <form onSubmit={submit}>
@@ -46,7 +48,6 @@ export default function Login({ status, canResetPassword }) {
                         isFocused={true}
                         onChange={(e) => setData('email', e.target.value)}
                     />
-
                     <InputError message={errors.email} className="mt-2" />
                 </div>
 
@@ -88,10 +89,11 @@ export default function Login({ status, canResetPassword }) {
                     )}
 
                     <PrimaryButton className="ms-4" disabled={processing}>
-                        Log in
+                        Submit
                     </PrimaryButton>
                 </div>
             </form>
+            <Footer/>
         </GuestLayout>
     );
 }

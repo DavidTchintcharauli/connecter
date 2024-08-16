@@ -1,95 +1,14 @@
-import { Link, Head } from '@inertiajs/react';
+import { Head } from '@inertiajs/react';
+import Header from '@/Components/Header.jsx';
+import Footer from '@/Components/Footer';
+
 
 export default function Welcome({ auth, laravelVersion, phpVersion }) {
     return (
         <>
             <Head title="Welcome" />
             <div className="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-amber-400 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
-                <div className="sm:fixed bg-sky-300 sm:top-0 sm:right-0 p-3 flex justify-between items-center space-x-4 w-full">
-                    <Link>
-                        <svg width="75" height="75" viewBox="0 0 245 252" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M132.044 98.7557L147.365 85.8999C155.827 78.7999 168.442 79.9036 175.542 88.3651C182.642 96.8266 181.538 109.442 173.077 116.542L157.756 129.397L132.044 98.7557Z" stroke="black" stroke-width="10" />
-                            <path d="M83.365 139.9L98.6859 127.044L124.397 157.686L109.077 170.542C100.615 177.642 87.9999 176.538 80.8999 168.077C73.7999 159.615 74.9036 147 83.365 139.9Z" stroke="black" stroke-width="10" />
-                            <rect x="106" y="128.07" width="25" height="10" transform="rotate(-40 106 128.07)" fill="black" />
-                            <rect x="119" y="144.07" width="25" height="10" transform="rotate(-40 119 144.07)" fill="black" />
-                            <rect x="176" y="82.0697" width="25" height="10" transform="rotate(-40 176 82.0697)" fill="black" />
-                            <rect x="55" y="182.07" width="25" height="10" transform="rotate(-40 55 182.07)" fill="black" />
-                            <path d="M230.5 163.5L228.851 167.504C218.63 192.327 199.637 212.681 175.627 224.687V224.687C158.25 233.375 138.787 237.365 119.397 236.158V236.158C70.32 233.104 29.0615 197.267 18.4729 149.249V149.249C16.188 138.888 15.3972 128.124 16.1791 117.542V117.542C19.8897 67.3258 57.435 26.146 107.096 17.8244L115 16.5L120.316 16.0911C164.192 12.716 205.683 36.461 225 76V76" stroke="black" stroke-width="30" />
-                        </svg>
-                    </Link>
-                    <div className='flex'>
-                        <Link className='mx-3'>
-                            <div>
-                                <svg width="50" height="50" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <rect x="15" y="15" width="470" height="470" rx="235" stroke="black" stroke-width="30" />
-                                    <path d="M232.424 207.985L235.713 206.643C274.054 191.007 312.739 228.299 298.52 267.187C293.756 280.216 283.556 290.525 270.578 295.427L267.255 296.682C228.455 311.337 190.753 272.86 206.194 234.366C211.001 222.381 220.467 212.861 232.424 207.985Z" stroke="black" stroke-width="46" />
-                                    <path d="M165.83 334.992L213.716 215.614L335.545 165.93L291.017 287.707L165.83 334.992Z" stroke="black" stroke-width="46" />
-                                </svg>
-                            </div>
-                            <div className='text-center'>
-                                browse
-                            </div>
-                        </Link>
-                        <Link className='mx-3'>
-                            <div>
-                                <svg width="50" height="50" viewBox="0 0 500 433" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M0 132C0 104.386 22.3858 82 50 82H450C477.614 82 500 104.386 500 132V232H0V132Z" fill="black" />
-                                    <path d="M0 283H169.5V336H334.75V283H500V383C500 410.614 477.614 433 450 433H50C22.3858 433 0 410.614 0 383V283Z" fill="black" />
-                                    <g filter="url(#filter0_d_8_14)">
-                                        <mask id="path-3-inside-1_8_14" fill="white">
-                                            <path d="M128 50C128 22.3858 150.386 0 178 0H322C349.614 0 372 22.3858 372 50V82H128V50Z" />
-                                        </mask>
-                                        <path d="M78 50C78 -5.22847 122.772 -50 178 -50H322C377.228 -50 422 -5.22847 422 50H322H178H78ZM372 82H128H372ZM78 82V50C78 -5.22847 122.772 -50 178 -50V50V82H78ZM322 -50C377.228 -50 422 -5.22847 422 50V82H322V50V-50Z" fill="black" mask="url(#path-3-inside-1_8_14)" />
-                                    </g>
-                                    <defs>
-                                        <filter id="filter0_d_8_14" x="124" y="0" width="252" height="90" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                                            <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                                            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
-                                            <feOffset dy="4" />
-                                            <feGaussianBlur stdDeviation="2" />
-                                            <feComposite in2="hardAlpha" operator="out" />
-                                            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
-                                            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_8_14" />
-                                            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_8_14" result="shape" />
-                                        </filter>
-                                    </defs>
-                                </svg>
-                            </div>
-                            <div className='text-center'>
-                                job
-                            </div>
-                        </Link>
-                    </div>
-                    <div className='end'>
-                        {auth.user ? (
-                            <Link
-                                href={route('dashboard')}
-                                className="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
-                            >
-                                Dashboard
-                            </Link>
-                        ) : (
-                            <div className='flex justify-center'>
-                                <div className='bg-green-500 hover:bg-green-600 m-3 rounded-full flex items-center justify-center'>
-                                    <Link
-                                        href={route('login')}
-                                        className="font-semibold  my-2 mx-4 text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
-                                    >
-                                        Log In
-                                    </Link>
-                                </div>
-                                <div className='bg-green-500 hover:bg-green-600 m-3 rounded-full flex items-center justify-center'>
-                                    <Link
-                                        href={route('register')}
-                                        className="m-4 font-semibold my-2 mx-4 text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500"
-                                    >
-                                        Sign Up
-                                    </Link>
-                                </div>
-                            </div>
-                        )}
-                    </div>
-                </div>
+                <Header />
 
                 <div className="max-w-7xl mt-20 mx-auto p-6 lg:p-8">
                     <div>
@@ -185,93 +104,7 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                         <div className="text-center text-sm sm:text-start">&nbsp;</div>
                     </div>
                 </div>
-                <div className='sm:fixed bg-sky-300 sm:bottom-0 sm:right-0 p-3 flex justify-between items-center space-x-4 w-full'>
-                    <div className='flex'>
-                        <Link className='mx-3'>
-                            <div className='justify-center flex'>
-                                <svg width="50" height="50" viewBox="0 0 500 501" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M0 0H500V130.5V218L475 100H425V292L325 100H275V323L225 350H75V275H175V225H75V150H225V100H25V400H225V350L275 323V400H325V208L425 400H475V100L500 218V372.5V500.5H0V0Z" fill="black" />
-                                </svg>
-                            </div>
-                            <div className='text-center'>
-                                English
-                            </div>
-                        </Link>
-                        <Link className='mx-3'>
-                            <div className='justify-center flex'>
-                                <svg width="50" height="50" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <rect x="25" y="25" width="450" height="450" rx="225" stroke="black" stroke-width="50" />
-                                    <path d="M181.243 148.435C185.046 141.542 190.135 135.443 196.234 130.467C202.678 125.21 210.12 121.313 218.11 119.011L223.457 117.47C231.446 115.168 239.719 114 248.033 114H259.861C267.888 114 275.848 115.452 283.357 118.286C293.307 122.041 302.213 128.125 309.327 136.03L310.678 137.531C317.48 145.089 322.58 154.019 325.633 163.717C328.19 171.84 329.266 180.355 328.809 188.858L327.944 204.95C327.324 216.47 323.858 227.657 317.854 237.508L317.217 238.554C310.866 248.977 301.727 257.417 290.833 262.921L279.122 268.839C267.156 274.885 258.945 286.447 257.181 299.738L254.251 321.807C253.249 329.359 246.809 335 239.192 335C230.802 335 224 328.198 224 319.808V288.864C224 268.472 237.387 250.499 256.925 244.66L262.006 243.142C265.652 242.052 269.131 240.47 272.348 238.438C281.431 232.701 287.954 223.684 290.56 213.261L292.357 206.071C294.102 199.094 294.437 191.839 293.343 184.731L293.019 182.625C292.344 178.237 290.962 173.988 288.926 170.044C285.696 163.787 280.911 158.466 275.03 154.593L274.443 154.206C267.305 149.505 258.945 147 250.397 147H248.662C241.313 147 234.056 148.636 227.418 151.789L225.119 152.881C220.098 155.266 215.645 158.698 212.061 162.947L210.257 165.084C206.188 169.907 203.729 175.882 203.226 182.173L202.148 195.645C201.5 203.752 194.732 210 186.599 210C177.984 210 171 203.016 171 194.401V175.807C171 170.03 172.464 164.347 175.254 159.289L181.243 148.435Z" fill="black" />
-                                    <path d="M181.243 148.435C185.046 141.542 190.135 135.443 196.234 130.467C202.678 125.21 210.12 121.313 218.11 119.011L223.457 117.47C231.446 115.168 239.719 114 248.033 114H259.861C267.888 114 275.848 115.452 283.357 118.286C293.307 122.041 302.213 128.125 309.327 136.03L310.678 137.531C317.48 145.089 322.58 154.019 325.633 163.717C328.19 171.84 329.266 180.355 328.809 188.858L327.944 204.95C327.324 216.47 323.858 227.657 317.854 237.508L317.217 238.554C310.866 248.977 301.727 257.417 290.833 262.921L279.122 268.839C267.156 274.885 258.945 286.447 257.181 299.738L254.251 321.807C253.249 329.359 246.809 335 239.192 335C230.802 335 224 328.198 224 319.808V288.864C224 268.472 237.387 250.499 256.925 244.66L262.006 243.142C265.652 242.052 269.131 240.47 272.348 238.438C281.431 232.701 287.954 223.684 290.56 213.261L292.357 206.071C294.102 199.094 294.437 191.839 293.343 184.731L293.019 182.625C292.344 178.237 290.962 173.988 288.926 170.044C285.696 163.787 280.911 158.466 275.03 154.593L274.443 154.206C267.305 149.505 258.945 147 250.397 147H248.662C241.313 147 234.056 148.636 227.418 151.789L225.119 152.881C220.098 155.266 215.645 158.698 212.061 162.947L210.257 165.084C206.188 169.907 203.729 175.882 203.226 182.173L202.148 195.645C201.5 203.752 194.732 210 186.599 210C177.984 210 171 203.016 171 194.401V175.807C171 170.03 172.464 164.347 175.254 159.289L181.243 148.435Z" stroke="black" />
-                                    <rect x="219" y="345.5" width="40" height="40" rx="20" fill="black" />
-                                </svg>
-                            </div>
-                            <div className='text-center'>
-                                Help & Support
-                            </div>
-                        </Link>
-                        <Link className='mx-3'>
-                            <div className='justify-center flex'>
-                                <svg width="50" height="50" viewBox="0 0 500 501" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M0 0.5H500V125.5H274L274.5 123.5L275 120.5V116.5L274.5 113.5L274 111.5L272.5 107.5L270 103.5L268 101L265 98.5L260.5 95.5L256 94L251 93.5H248L245 94L239.5 95.5L235 98.5L231 102L228 106.5L226.5 109.5L226 111.5L225.5 113.5L225 115.5V118V121L225.5 123L226 125.5L227 128.5L228.5 131.5L230 133.5L232 136L232.5 136.5L233.5 137.5L235 138.5L238 140.5L240 141.5L243 142.5L245 143L249 143.5H251L255 143L258.5 142.5L265.5 138.5L270 134L273 128.5L274 125.5L277 192H227V413H277V192L274 125.5H500V500.5H0V0.5Z" fill="black" />
-                                </svg>
-                            </div>
-                            <div className='text-center'>
-                                About Us
-                            </div>
-                        </Link>
-                        <Link className='mx-3'>
-                            <div className='justify-center flex'>
-                                <svg width="50" height="50" viewBox="0 0 543 451" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <rect x="205.939" y="21.1428" width="125.29" height="186.764" rx="13" transform="rotate(33.7962 205.939 21.1428)" fill="black" />
-                                    <rect x="411.663" y="316.502" width="99.1247" height="37.8653" rx="4" transform="rotate(-59.1985 411.663 316.502)" fill="black" />
-                                    <rect x="213.913" width="137.094" height="19.6187" rx="9.80934" transform="rotate(33.7962 213.913 0)" fill="black" />
-                                    <rect x="95.9126" y="175" width="137.094" height="19.6187" rx="9.80934" transform="rotate(33.7962 95.9126 175)" fill="black" />
-                                    <rect x="5" y="407" width="306" height="39" rx="12" stroke="black" stroke-width="10" />
-                                    <rect x="21" y="369" width="272" height="33" rx="16.5" fill="black" />
-                                    <rect x="21" y="369" width="272" height="33" rx="16.5" stroke="#765959" />
-                                    <path d="M205.324 138.138C201.93 135.19 205.229 129.75 209.411 131.396L452.516 227.035C454.824 227.942 455.757 230.71 454.472 232.831L408.579 308.522C407.294 310.642 404.408 311.094 402.536 309.467L205.324 138.138Z" fill="black" />
-                                </svg>
-                            </div>
-                            <div className='text-center'>
-                                Rules
-                            </div>
-                        </Link>
-                    </div>
-                    <div className='flex'>
-                        <Link className='mx-3'>
-                            <div className='justify-center flex'>
-                                <svg width="50" height="50" viewBox="0 0 652 847" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M545 331C545 298.17 539.335 265.661 528.33 235.329C517.324 204.998 501.192 177.438 480.856 154.223C460.52 131.009 436.378 112.594 409.808 100.03C383.237 87.4664 354.759 81 326 81C297.24 81 268.763 87.4664 242.192 100.03C215.622 112.594 191.48 131.009 171.144 154.223C150.808 177.438 134.676 204.998 123.67 235.329C112.665 265.661 107 298.17 107 331L326 331H545Z" fill="black" />
-                                    <path d="M458.242 14.3247C464.809 6.49777 476.478 5.47687 484.305 12.0444V12.0444C492.132 18.6119 493.153 30.2809 486.585 38.1078L421.344 115.86L393 92.0766L458.242 14.3247Z" fill="black" />
-                                    <path d="M166.042 38.2026C159.475 30.3757 160.496 18.7067 168.322 12.1392V12.1392C176.149 5.57166 187.818 6.59256 194.386 14.4194L259.629 92.173L231.285 115.956L166.042 38.2026Z" fill="black" />
-                                    <path d="M107 360H545V613C545 640.614 522.614 663 495 663H157C129.386 663 107 640.614 107 613V360Z" fill="black" />
-                                    <rect x="569" y="360" width="83" height="303" rx="41.5" fill="black" />
-                                    <rect y="360" width="83" height="303" rx="41.5" fill="black" />
-                                    <rect x="389" y="631" width="83" height="216" rx="41.5" fill="black" />
-                                    <rect x="177" y="631" width="83" height="216" rx="41.5" fill="black" />
-                                </svg>
-                            </div>
-                            <div className='text-center'>
-                                Android App
-                            </div>
-                        </Link>
-                        <Link className='mx-3'>
-                            <div className='justify-center flex'>
-                                <svg width="50" height="50" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <rect x="25" y="25" width="450" height="450" rx="225" stroke="black" stroke-width="50" />
-                                    <path d="M301.19 78L274.622 113.493L249.894 146.216L248.934 142.302C242.355 115.483 258.763 88.4082 285.582 81.8291L301.19 78Z" fill="black" />
-                                    <path d="M249.878 146.243L276.446 110.751L301.174 78.0274L302.135 81.9413C308.714 108.76 292.306 135.835 265.487 142.414L249.878 146.243Z" fill="black" />
-                                    <path d="M122.592 169.152C126.174 163.089 130.701 157.637 136 153V153L145.5 145.5L151.609 141.66C159.189 136.896 167.169 132.801 175.46 129.424L176.5 129L182.672 126.805C186.042 125.607 189.558 124.869 193.125 124.609L193.947 124.549C198.928 124.187 203.929 124.867 208.631 126.547V126.547C213.164 128.166 217.325 130.679 220.868 133.938L228 140.5L241.05 151.686C241.682 152.228 242.263 152.826 242.786 153.473V153.473C247.944 159.86 257.533 160.281 263.231 154.371L265.136 152.396C265.711 151.8 266.332 151.248 266.992 150.748L280.5 140.5L291.002 134.307C296.965 130.79 303.436 128.219 310.187 126.685L312.167 126.235C318.67 124.757 325.384 124.457 331.992 125.35V125.35C337.631 126.112 343.12 127.733 348.268 130.155L349.938 130.942C354.946 133.298 359.533 136.458 363.52 140.297L368.89 145.468C370.282 146.809 371.388 148.418 372.141 150.198L375.526 158.198C376.098 159.55 375.675 161.119 374.5 162V162L371 165L368 167.5L364 171L359.5 175L355.5 179.5L353.217 182.436C352.407 183.477 351.683 184.582 351.051 185.74V185.74C349.694 188.228 348.78 190.932 348.349 193.733L348.304 194.024C348.102 195.339 348 196.668 348 197.999V201V208.5V209.329C348 213.762 348.503 218.181 349.5 222.5V222.5L351 228.5L354 238L355.954 242.188C356.974 244.372 358.437 246.32 360.251 247.907V247.907C361.082 248.634 361.98 249.28 362.934 249.836L367.5 252.5L372 254.5L377 256.5L385.5 260L395.208 263.883C395.402 263.961 395.604 264.017 395.81 264.052V264.052C397.322 264.304 398.378 265.688 398.222 267.213L396.71 281.952C396.57 283.313 396.282 284.655 395.849 285.954L391 300.5L386 320L379 338.5L371 357L367.22 366.45C364.427 373.432 360.463 379.887 355.499 385.535L354.336 386.859C350.47 391.258 345.927 395.013 340.879 397.983V397.983C334.686 401.626 327.841 404.023 320.728 405.039L319.378 405.232C313.49 406.073 307.511 406.063 301.626 405.201L298.228 404.704C292.762 403.904 287.409 402.463 282.279 400.412L279.824 399.43C276.618 398.147 273.279 397.225 269.87 396.679L269.71 396.654C264.934 395.889 260.066 395.889 255.29 396.654V396.654C251.775 397.216 248.339 398.187 245.05 399.548L240.782 401.314C237.27 402.768 233.62 403.864 229.888 404.586L229.249 404.71C223.131 405.894 216.852 405.99 210.701 404.992V404.992C204.614 404.005 198.746 401.963 193.361 398.957L190.261 397.227C183.464 393.433 177.316 388.579 172.049 382.847L163 373L145.5 352L135.753 338.414C131.257 332.147 127.239 325.551 123.731 318.682L117 305.5L111.082 290.062C107.375 280.392 104.893 270.296 103.693 260.009V260.009C102.568 250.37 102.578 240.631 103.721 230.994L104.12 227.63C105.039 219.888 106.548 212.227 108.635 204.715L110.5 198L116.5 181.5L121.5 171L122.592 169.152Z" fill="black" />
-                                </svg>
-                            </div>
-                            <div className='text-center'>
-                                IOS App
-                            </div>
-                        </Link>
-                    </div>
-                </div>
-                
+                <Footer/>
             </div>
 
         </>
