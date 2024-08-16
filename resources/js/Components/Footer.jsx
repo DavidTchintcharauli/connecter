@@ -11,7 +11,7 @@ export default function Footer() {
                     </svg>
                 </div>
                 <div className='text-center'>
-                    Englishs
+                    English
                 </div>
             </Link>
             <Link className='mx-3'>
