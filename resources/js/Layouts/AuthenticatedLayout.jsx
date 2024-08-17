@@ -21,7 +21,7 @@ export default function Authenticated({ user, header, children }) {
                             </div>
 
                             <div className="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                                <NavLink href={route('dashboard')} active={route().current('dashboard')}>
+                                <NavLink href={route('browse')} active={route().current('browse')}>
                                     <div>
                                         <div>
                                             <svg width="50" height="50" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -31,11 +31,11 @@ export default function Authenticated({ user, header, children }) {
                                             </svg>
                                         </div>
                                         <div className='text-center'>
-                                            browse
+                                            Browse
                                         </div>
                                     </div>
                                 </NavLink>
-                                <NavLink href={route('dashboard')} active={route().current('dashboard')}>
+                                <NavLink href={route('jobs')} active={route().current('jobs')}>
                                     <div>
                                         <div>
                                             <svg width="50" height="50" viewBox="0 0 500 433" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -62,7 +62,7 @@ export default function Authenticated({ user, header, children }) {
                                             </svg>
                                         </div>
                                         <div className='text-center'>
-                                            job
+                                            Jobs
                                         </div>
                                     </div>
                                 </NavLink>
@@ -88,7 +88,7 @@ export default function Authenticated({ user, header, children }) {
                                         </div>
                                     </div>
                                 </NavLink>
-                                <NavLink className='m-2' href={route('dashboard')} active={route().current('dashboard')}>
+                                <NavLink className='m-2' href={route('requestPost')} active={route().current('requestPost')}>
                                     <div>
                                         <div className='flex items-center justify-center'>
                                             <svg width="50" height="50" viewBox="0 0 509 507" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -104,7 +104,7 @@ export default function Authenticated({ user, header, children }) {
                                         </div>
                                     </div>
                                 </NavLink>
-                                <NavLink className='m-2' href={route('dashboard')} active={route().current('dashboard')}>
+                                <NavLink className='m-2' href={route('messages')} active={route().current('messages')}>
                                     <div>
                                         <div className='flex items-center justify-center'>
                                             <svg width="50" height="50" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -117,7 +117,7 @@ export default function Authenticated({ user, header, children }) {
                                         </div>
                                     </div>
                                 </NavLink>
-                                <NavLink className='m-2' href={route('dashboard')} active={route().current('dashboard')}>
+                                <NavLink className='m-2' href={route('notifications')} active={route().current('notifications')}>
                                     <div>
                                         <div className='flex items-center justify-center'>
                                             <svg width="50" height="50" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
