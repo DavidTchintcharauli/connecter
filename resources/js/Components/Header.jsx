@@ -3,7 +3,7 @@ import { Link, usePage } from "@inertiajs/react";
 export default function Header(auth, laravelVersion, phpVersion) {
 
     return (
-        <div className="sm:fixed bg-sky-300 sm:top-0 sm:right-0 p-3 flex justify-between items-center space-x-4 w-full">
+        <div className="sm:fixed bg-sky-300 sm:top-0 sm:right-0 p-3 flex justify-between items-center space-x-4 z-50 w-full">
             <Link
                 href='/'
             >
@@ -64,7 +64,7 @@ export default function Header(auth, laravelVersion, phpVersion) {
                 {auth.user ? (
                     <Link
                         href={route('dashboard')}
-                        className="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-none transition-colors duration-300 ease-in-out"
+                        className="font-semibold text-gray-600 hover:text-gray-900 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-none transition-colors duration-300 ease-in-out"
                     >
                         Dashboard
                     </Link>
@@ -73,7 +73,7 @@ export default function Header(auth, laravelVersion, phpVersion) {
                         <div className='bg-green-500 hover:bg-green-600 m-3 rounded-full flex items-center justify-center transition-colors duration-300 ease-in-out'>
                             <Link
                                 href={route('login')}
-                                className="font-semibold  my-2 mx-4 text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-none transition-colors duration-300 ease-in-out"
+                                className="font-semibold  my-2 mx-4 text-gray-900 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-none transition-colors duration-300 ease-in-out"
                             >
                                 Log In
                             </Link>
@@ -81,7 +81,7 @@ export default function Header(auth, laravelVersion, phpVersion) {
                         <div className='bg-green-500 hover:bg-green-600 m-3 rounded-full flex items-center justify-center transition-colors duration-300 ease-in-out'>
                             <Link
                                 href={route('register')}
-                                className="m-4 font-semibold my-2 mx-4 text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-none transition-colors duration-300 ease-in-out"
+                                className="m-4 font-semibold my-2 mx-4 text-gray-900 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-none transition-colors duration-300 ease-in-out"
                             >
                                 Sign Up
                             </Link>
