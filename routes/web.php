@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\NavigationController;
+use App\Http\Controllers\PublicController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -41,5 +42,11 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+Route::get('/helpAndSupport',[PublicController::class,'helpAndSupport'])->name('helpAndSupport');
+Route::get('/aboutUs',[PublicController::class,'aboutUs'])->name('aboutUs');
+Route::get('/rules',[PublicController::class,'rules'])->name('rules');
+Route::get('/androidApp',[PublicController::class,'androidApp'])->name('androidApp');
+Route::get('/iOSApp',[PublicController::class,'iOSApp'])->name('iOSApp');
 
 require __DIR__.'/auth.php';

@@ -14,7 +14,7 @@ export default function Footer() {
                     English
                 </div>
             </Link>
-            <Link className='mx-3'>
+            <Link className='mx-3' href={route('helpAndSupport')} active={route().current('helpAndSupport')}>
                 <div className='justify-center flex'>
                     <svg width="50" height="50" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect x="25" y="25" width="450" height="450" rx="225" stroke="black" stroke-width="50" />
@@ -27,7 +27,7 @@ export default function Footer() {
                     Help & Support
                 </div>
             </Link>
-            <Link className='mx-3'>
+            <Link className='mx-3' href={route('aboutUs')} active={route().current('aboutUs')}>
                 <div className='justify-center flex'>
                     <svg width="50" height="50" viewBox="0 0 500 501" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M0 0.5H500V125.5H274L274.5 123.5L275 120.5V116.5L274.5 113.5L274 111.5L272.5 107.5L270 103.5L268 101L265 98.5L260.5 95.5L256 94L251 93.5H248L245 94L239.5 95.5L235 98.5L231 102L228 106.5L226.5 109.5L226 111.5L225.5 113.5L225 115.5V118V121L225.5 123L226 125.5L227 128.5L228.5 131.5L230 133.5L232 136L232.5 136.5L233.5 137.5L235 138.5L238 140.5L240 141.5L243 142.5L245 143L249 143.5H251L255 143L258.5 142.5L265.5 138.5L270 134L273 128.5L274 125.5L277 192H227V413H277V192L274 125.5H500V500.5H0V0.5Z" fill="black" />
@@ -37,7 +37,7 @@ export default function Footer() {
                     About Us
                 </div>
             </Link>
-            <Link className='mx-3'>
+            <Link className='mx-3' href={route('rules')} active={route().current('rules')}>
                 <div className='justify-center flex'>
                     <svg width="50" height="50" viewBox="0 0 543 451" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect x="205.939" y="21.1428" width="125.29" height="186.764" rx="13" transform="rotate(33.7962 205.939 21.1428)" fill="black" />
@@ -56,7 +56,7 @@ export default function Footer() {
             </Link>
         </div>
         <div className='flex'>
-            <Link className='mx-3'>
+            <Link className='mx-3' href={route('androidApp')} active={route().current('androidApp')}>
                 <div className='justify-center flex'>
                     <svg width="50" height="50" viewBox="0 0 652 847" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M545 331C545 298.17 539.335 265.661 528.33 235.329C517.324 204.998 501.192 177.438 480.856 154.223C460.52 131.009 436.378 112.594 409.808 100.03C383.237 87.4664 354.759 81 326 81C297.24 81 268.763 87.4664 242.192 100.03C215.622 112.594 191.48 131.009 171.144 154.223C150.808 177.438 134.676 204.998 123.67 235.329C112.665 265.661 107 298.17 107 331L326 331H545Z" fill="black" />
@@ -73,7 +73,7 @@ export default function Footer() {
                     Android App
                 </div>
             </Link>
-            <Link className='mx-3'>
+            <Link className='mx-3' href={route('iOSApp')} active={route().current('iOSApp')}>
                 <div className='justify-center flex'>
                     <svg width="50" height="50" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect x="25" y="25" width="450" height="450" rx="225" stroke="black" stroke-width="50" />
