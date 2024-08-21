@@ -6,9 +6,11 @@ use App\Http\Controllers\NavigationController;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,6 +45,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/employees', [EmployeeController::class,'index'])->name('employees');
     Route::get('/permissionMessages', [NavigationController::class,'permissionMessages'])->name('permissionMessages');
     Route::post('/requestPost', [ProjectController::class, 'store'])->name('requestPost.store');
+    Route::get('/dashboard', [DashboardController::class,'index'])->name('dashboard');
 });
 
 Route::middleware('auth')->group(function () {
