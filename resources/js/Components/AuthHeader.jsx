@@ -4,7 +4,7 @@ import NavLink from '@/Components/NavLink';
 import { Link } from '@inertiajs/react';
 import { useState } from 'react';
 
-export default function AuthHeader(user ) {
+export default function AuthHeader(user) {
 
     const [showingNavigationDropdown, setShowingNavigationDropdown] = useState(false);
 
@@ -70,6 +70,23 @@ export default function AuthHeader(user ) {
 
                     <div className="hidden sm:flex sm:items-center sm:ms-6">
                         <div>
+                            <NavLink className='m-2' href={route('roles')} active={route().current('roles')}>
+                                <div>
+                                    <div className='flex items-center justify-center'>
+                                        <svg width="50" height="50" viewBox="0 0 501 521" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M0.5 79C0.5 46.9675 26.4675 21 58.5 21H63H110V21C110.828 21 111.5 21.6716 111.5 22.5V67.5C111.5 69.433 109.933 71 108 71V71H65.3738C59.6459 71 54.427 74.2891 51.9556 79.4564V79.4564C50.9974 81.46 50.5 83.6528 50.5 85.8738V452.896C50.5 457.787 52.3332 462.5 55.6379 466.105V466.105C59.3704 470.177 64.6515 472.479 70.1751 472.443L438.573 470.032C441.73 470.012 444.752 468.748 446.984 466.516V466.516C449.235 464.265 450.5 461.211 450.5 458.027V86.3639C450.5 82.2892 448.881 78.3813 446 75.5V75.5C443.119 72.6187 439.211 71 435.136 71H384V71C382.343 71 381 69.6569 381 68V24C381 22.3431 382.343 21 384 21V21H442.5C474.533 21 500.5 46.9675 500.5 79V463C500.5 495.033 474.533 521 442.5 521H58.5C26.4675 521 0.5 495.033 0.5 463V79Z" fill="black" />
+                                            <rect x="11.5" y="-11.5" width="271" height="72" rx="36" transform="matrix(1 0 0 -1 100 72)" stroke="black" stroke-width="23" />
+                                            <rect x="86" y="155" width="328" height="40" rx="20" fill="black" />
+                                            <rect x="86" y="227" width="328" height="40" rx="20" fill="black" />
+                                            <rect x="84" y="299" width="328" height="40" rx="20" fill="black" />
+                                            <rect x="83" y="371" width="328" height="40" rx="20" fill="black" />
+                                        </svg>
+                                    </div>
+                                    <div className='text-center'>
+                                        Roles
+                                    </div>
+                                </div>
+                            </NavLink>
                             <NavLink className='m-2' href={route('employees')} active={route().current('employees')}>
                                 <div>
                                     <div className='flex items-center justify-center'>

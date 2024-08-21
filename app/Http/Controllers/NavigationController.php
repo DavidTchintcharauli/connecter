@@ -24,7 +24,7 @@ class NavigationController extends Controller
 
     public function messages()
     {
-        return Inertia::render("Messages");
+       return Inertia::render("Messages");
     }
 
     public function notifications()
@@ -40,5 +40,15 @@ class NavigationController extends Controller
     public function jobs()
     {
         return Inertia::render("Jobs");
+    }
+
+    public function roles()
+    {
+        return Inertia::render("Roles");
+    }
+
+    public function permissionMessages()
+    {
+        return Inertia::render("PermissionMessages");
     }
 }
