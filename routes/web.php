@@ -5,6 +5,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\NavigationController;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\ProjectController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -41,6 +42,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('/roles', [RoleController::class,'store'])->name('roles.store');
     Route::get('/employees', [EmployeeController::class,'index'])->name('employees');
     Route::get('/permissionMessages', [NavigationController::class,'permissionMessages'])->name('permissionMessages');
+    Route::post('/requestPost', [ProjectController::class, 'store'])->name('requestPost.store');
 });
 
 Route::middleware('auth')->group(function () {
