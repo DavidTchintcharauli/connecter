@@ -17,6 +17,7 @@ class Project extends Model
         'end_time',
         'budget',
         'bids',
+        'updated_at',
     ];
 
     public function user()

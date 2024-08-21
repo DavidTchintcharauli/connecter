@@ -1,9 +1,17 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head, usePage } from '@inertiajs/react';
 import Footer from '@/Components/Footer';
+import { formatDistanceToNow } from 'date-fns'
+import { enUS } from 'date-fns/locale'
 
 export default function Dashboard({ auth }) {
     const { projects } = usePage().props
+
+    const timeAgo = (date) => {
+        const now = new Date()
+        const projectDate = new Date(date)
+        return formatDistanceToNow(projectDate, { addSuffix: true, locale: enUS })
+    }
 
     return (
         <AuthenticatedLayout
@@ -23,6 +31,7 @@ export default function Dashboard({ auth }) {
                                     <p className='text-sm text-gray-500 mb-2'>Budget: ${project.budget}</p>
                                     <p className='mb-2'>{project.project_description}</p>
                                     <p className='text-sm text-gray-500'>Bids:{project.bids}</p>
+                                    <p className='text-sm text-gray-500'>posted: {timeAgo(project.updated_at)}</p>
                                 </div>
                             ))
                         ) : (
