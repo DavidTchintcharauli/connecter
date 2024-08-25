@@ -43,4 +43,14 @@ class ProjectController extends Controller
             'project' => $project,
         ]);
     }
+
+    public function projectView($id)
+    {
+        // $project = Project::findOrFail($id);
+        $project = Project::with('comments')->findOrFail($id);
+
+        return inertia('ProjectView', [
+            'project' => $project,
+        ]);
+    }
 }

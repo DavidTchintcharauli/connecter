@@ -20,6 +20,11 @@ class Project extends Model
         'updated_at',
     ];
 
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
     public function user()
     {
         return $this->belongsTo(User::class);
