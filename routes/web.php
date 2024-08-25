@@ -41,6 +41,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/comment/{id}', [ProjectController::class,'show'])->name('comment');
     Route::get('/messages', [NavigationController::class,'messages'])->middleware(['auth', 'verified', 'permission:Employer_permission'])->name('messages');
     Route::get('/notifications', [NavigationController::class,'notifications'])->name('notifications');
+    Route::get('/projectView/{id}', [NavigationController::class,'projectView'])->name('projectView');
     Route::get('/browse', [NavigationController::class,'browse'])->name('browse');
     Route::get('/jobs', [NavigationController::class,'jobs'])->name('jobs');
     Route::get('/roles', [RoleController::class, 'show'])->name('roles');
