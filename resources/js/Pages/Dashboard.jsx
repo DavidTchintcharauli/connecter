@@ -2,42 +2,59 @@ import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head, usePage } from '@inertiajs/react';
 import NavLink from '@/Components/NavLink';
 import Footer from '@/Components/Footer';
-import { formatDistanceToNow } from 'date-fns'
-import { enUS } from 'date-fns/locale'
+import { formatDistanceToNow } from 'date-fns';
+import { enUS } from 'date-fns/locale';
 
 export default function Dashboard({ auth }) {
-    const { projects } = usePage().props
+    const { projects } = usePage().props;
 
     const timeAgo = (date) => {
-        const now = new Date()
-        const projectDate = new Date(date)
-        return formatDistanceToNow(projectDate, { addSuffix: true, locale: enUS })
-    }
+        const now = new Date();
+        const projectDate = new Date(date);
+        return formatDistanceToNow(projectDate, { addSuffix: true, locale: enUS });
+    };
 
     return (
         <AuthenticatedLayout
             user={auth.user}
-            header={<h2 className="font-semibold text-xl text-gray-800 leading-tight">Dashboard</h2>}
+            header={<h2 className="text-2xl font-semibold text-gray-900">Dashboard</h2>}
         >
             <Head title="Dashboard" />
 
             <div className="py-12 max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div className='bg-white overflow-hidden shadow-sm sm:rounded-lg'>
-                    <div className='p-6 bg-white border-b border-gray-200'>
-                        <h3 className='text-xl font-semibold mb-4'>Projects</h3>
+                <div className='bg-white shadow-md rounded-lg'>
+                    <div className='p-6 border-b border-gray-200'>
+                        <h3 className='text-2xl font-semibold text-gray-800 mb-6'>Projects</h3>
                         {projects.length ? (
                             projects.map(project => (
-                                <div key={project.id} className='border border-gray-300 p-4 rounded-lg mt-4'>
-                                    <NavLink className='m-2' href={route('comment', project.id)} key={project.id} active={route().current('comment')}>Click to view</NavLink>
-                                    <h4 className='text-lg font-bold'>{project.project_name}</h4>
-                                    <p className='text-sm text-gray-500 mb-2'>Budget: ${project.budget}</p>
-                                    <p className='mb-2'>{project.project_description}</p>
-                                    <p className='text-sm text-gray-500'>Bids:{project.bids}</p>
-                                    <p className='text-sm text-gray-500'>posted: {timeAgo(project.updated_at)}</p>
+                                <div 
+                                    key={project.id} 
+                                    className='relative border border-gray-200 rounded-lg p-6 mb-6 shadow-sm transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg hover:bg-slate-100'
+                                >
+                                    <NavLink
+                                        className='absolute top-4 right-4 text-blue-600 hover:underline'
+                                        href={route('comment', project.id)}
+                                        active={route().current('comment')}
+                                    >
+                                        Make Proposal
+                                    </NavLink>
+                                    <div className='flex flex-col h-full'>
+                                        <div className='flex-1'>
+                                            <h4 className='text-xl font-semibold text-gray-900'>{project.project_name}</h4>
+                                            <p className='text-sm text-gray-600 mt-1'>Budget: <span className='font-medium text-gray-800'>${project.budget}</span></p>
+                                            <p className='text-gray-700 mt-2'>{project.project_description}</p>
+                                            <div className='mt-4 flex justify-between'>
+                                                <p className='text-sm text-gray-600'>Bids: <span className='font-medium'>{project.bids}</span></p>
+                                            </div>
+                                        </div>
+                                        <div className='absolute bottom-4 right-4 text-sm text-gray-600'>
+                                            Posted: <span className='font-medium'>{timeAgo(project.updated_at)}</span>
+                                        </div>
+                                    </div>
                                 </div>
                             ))
                         ) : (
-                            <p>No projects found.</p>
+                            <p className='text-gray-600'>No projects found.</p>
                         )}
                     </div>
                 </div>
