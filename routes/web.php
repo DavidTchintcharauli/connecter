@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\NavigationController;
@@ -7,6 +8,7 @@ use App\Http\Controllers\PublicController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\InserterController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -36,6 +38,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', [NavigationController::class,'dashboard'])->name('dashboard');
     Route::get('/employees', [NavigationController::class,'employees'])->name('employees');
     Route::get('/requestPost', [NavigationController::class,'requestPost'])->name('requestPost');
+    Route::get('/comment/{id}', [ProjectController::class,'show'])->name('comment');
     Route::get('/messages', [NavigationController::class,'messages'])->middleware(['auth', 'verified', 'permission:Employer_permission'])->name('messages');
     Route::get('/notifications', [NavigationController::class,'notifications'])->name('notifications');
     Route::get('/browse', [NavigationController::class,'browse'])->name('browse');
@@ -45,6 +48,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/employees', [EmployeeController::class,'index'])->name('employees');
     Route::get('/permissionMessages', [NavigationController::class,'permissionMessages'])->name('permissionMessages');
     Route::post('/requestPost', [ProjectController::class, 'store'])->name('requestPost.store');
+    Route::post('/comment', [CommentController::class, 'store'])->name('comment.store');
     Route::get('/dashboard', [DashboardController::class,'index'])->name('dashboard');
 });
 

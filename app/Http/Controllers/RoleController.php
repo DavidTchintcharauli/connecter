@@ -6,13 +6,17 @@ use App\Models\Role;
 use App\Models\UserRole;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Inertia\Inertia;
 
 class RoleController extends Controller
 {
     public function show()
     {
         $roles = Role::all();
-        return inertia('Roles', ['roles' => $roles]);
+
+        return Inertia::render('Roles', [
+            'roles' => $roles,
+        ]);
     }
 
     public function store(Request $request)

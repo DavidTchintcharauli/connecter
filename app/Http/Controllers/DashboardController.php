@@ -10,7 +10,8 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $projects = Project::where('user_id', auth()->id())->get();
+        // $projects = Project::where('user_id', auth()->id())->get();
+        $projects = Project::all();
 
         return Inertia::render('Dashboard', [
             'projects' => $projects,

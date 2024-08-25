@@ -1,5 +1,6 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import { Head, usePage } from '@inertiajs/react';
+import NavLink from '@/Components/NavLink';
 import Footer from '@/Components/Footer';
 import { formatDistanceToNow } from 'date-fns'
 import { enUS } from 'date-fns/locale'
@@ -27,6 +28,7 @@ export default function Dashboard({ auth }) {
                         {projects.length ? (
                             projects.map(project => (
                                 <div key={project.id} className='border border-gray-300 p-4 rounded-lg mt-4'>
+                                    <NavLink className='m-2' href={route('comment', project.id)} key={project.id} active={route().current('comment')}>Click to view</NavLink>
                                     <h4 className='text-lg font-bold'>{project.project_name}</h4>
                                     <p className='text-sm text-gray-500 mb-2'>Budget: ${project.budget}</p>
                                     <p className='mb-2'>{project.project_description}</p>

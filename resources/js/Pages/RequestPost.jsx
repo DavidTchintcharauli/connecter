@@ -107,7 +107,8 @@ export default function RequestPost({ auth }) {
                                 value={data.bids}
                                 onChange={e => setData('bids', e.target.value)}
                                 className='mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 sm:text-sm'
-                                min="0"
+                                min="10"
+                                max="50"
                             />
                             {errors.bids && <div className='text-red-600 text-sm mt-2'>{errors.bids}</div>}
                         </div>

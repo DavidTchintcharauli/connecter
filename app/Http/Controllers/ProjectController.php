@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Project;
+use App\Models\Comment;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProjectController extends Controller
 {
@@ -31,5 +33,14 @@ class ProjectController extends Controller
         $project->save();
 
         return redirect()->route('dashboard')->with('success','project created successfully!');
+    }
+
+    public function show($id)
+    {
+        $project = Project::findOrFail($id);
+
+        return inertia('Comment', [
+            'project' => $project,
+        ]);
     }
 }

@@ -51,4 +51,9 @@ class NavigationController extends Controller
     {
         return Inertia::render("PermissionMessages");
     }
+
+    public function comment()
+    {
+        return Inertia::render("Comment");
+    }
 }
