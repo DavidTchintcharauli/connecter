@@ -35,22 +35,38 @@ Route::get('/', function () {
 });
 
 Route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('/dashboard', [NavigationController::class,'dashboard'])->name('dashboard');
-    Route::get('/employees', [NavigationController::class,'employees'])->name('employees');
-    Route::get('/requestPost', [NavigationController::class,'requestPost'])->name('requestPost');
+    Route::get('/dashboard', [NavigationController::class, 'dashboard'])->name('dashboard');
+    Route::get('/employees', [NavigationController::class, 'employees'])->name('employees');
+    Route::get('/requestPost', [NavigationController::class, 'requestPost'])->name('requestPost');
+    Route::get('/messages', [NavigationController::class, 'messages'])->middleware(['auth', 'verified', 'permission:Employer_permission'])->name('messages');
+    Route::get('/notifications', [NavigationController::class, 'notifications'])->name('notifications');
+    Route::get('/browse', [NavigationController::class, 'browse'])->name('browse');
+    Route::get('/jobs', [NavigationController::class, 'jobs'])->name('jobs');
+    Route::get('/permissionMessages', [NavigationController::class, 'permissionMessages'])->name('permissionMessages');
+});
+
+Route::middleware(['auth', 'verified'])->group(function (){
     Route::get('/comment/{id}', [ProjectController::class,'show'])->name('comment');
-    Route::get('/messages', [NavigationController::class,'messages'])->middleware(['auth', 'verified', 'permission:Employer_permission'])->name('messages');
-    Route::get('/notifications', [NavigationController::class,'notifications'])->name('notifications');
-    Route::get('/projectView/{id}', [ProjectController::class,'projectView'])->name('projectView');
-    Route::get('/browse', [NavigationController::class,'browse'])->name('browse');
-    Route::get('/jobs', [NavigationController::class,'jobs'])->name('jobs');
-    Route::get('/roles', [RoleController::class, 'show'])->name('roles');
-    Route::post('/roles', [RoleController::class,'store'])->name('roles.store');
-    Route::get('/employees', [EmployeeController::class,'index'])->name('employees');
-    Route::get('/permissionMessages', [NavigationController::class,'permissionMessages'])->name('permissionMessages');
+    Route::get('/projectView/{id}', [ProjectController::class, 'projectView'])->name('projectView');
+    Route::get('/commentView/{id}', [ProjectController::class, 'commentView'])->name('commentView');
     Route::post('/requestPost', [ProjectController::class, 'store'])->name('requestPost.store');
+});
+
+Route::middleware(['auth', 'verified'])->group(function (){
+    Route::get('/roles', [RoleController::class, 'show'])->name('roles');
+    Route::post('/roles', [RoleController::class, 'store'])->name('roles.store');
+});
+
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('/comment/{id}', [CommentController::class, 'show'])->name('commentView');
+    Route::get('/commentView/{id}', [CommentController::class, 'show'])->name('commentView');
+    Route::get('/comment/{id}', [CommentController::class, 'comment'])->name('comment');
     Route::post('/comment', [CommentController::class, 'store'])->name('comment.store');
-    Route::get('/dashboard', [DashboardController::class,'index'])->name('dashboard');
+});
+
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('/employees', [EmployeeController::class, 'index'])->name('employees');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 });
 
 Route::middleware('auth')->group(function () {
@@ -59,10 +75,10 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/helpAndSupport',[PublicController::class,'helpAndSupport'])->name('helpAndSupport');
-Route::get('/aboutUs',[PublicController::class,'aboutUs'])->name('aboutUs');
-Route::get('/rules',[PublicController::class,'rules'])->name('rules');
-Route::get('/androidApp',[PublicController::class,'androidApp'])->name('androidApp');
-Route::get('/iOSApp',[PublicController::class,'iOSApp'])->name('iOSApp');
+Route::get('/helpAndSupport', [PublicController::class, 'helpAndSupport'])->name('helpAndSupport');
+Route::get('/aboutUs', [PublicController::class, 'aboutUs'])->name('aboutUs');
+Route::get('/rules', [PublicController::class, 'rules'])->name('rules');
+Route::get('/androidApp', [PublicController::class, 'androidApp'])->name('androidApp');
+Route::get('/iOSApp', [PublicController::class, 'iOSApp'])->name('iOSApp');
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

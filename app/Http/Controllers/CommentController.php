@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Comment;
+use App\Models\Project;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\DB;
+
 
 class CommentController extends Controller
 {
@@ -38,5 +41,36 @@ class CommentController extends Controller
         $comment->save();
 
         return redirect()->route('dashboard');
+    }
+
+    // public function show($id)
+    // {
+    //     $comment = Comment::with('user')->findOrFail($id);
+
+    //     return Inertia::render('CommentView', [
+    //         'comment' => $comment
+    //     ]);
+    // }
+
+    public function show($id)
+    {
+        $comment = DB::table('comments')
+            ->join('users', 'comments.employed_id', '=', 'users.id')
+            ->select('comments.*', 'users.name as user_name')
+            ->where('comments.id', $id)
+            ->first();
+
+        return Inertia::render('CommentView', [
+            'comment' => $comment
+        ]);
+    }
+
+    public function comment($id)
+    {
+        $project = Project::with('comments')->findOrFail($id);
+
+        return inertia('Comment', [
+            'project' => $project,
+        ]);
     }
 }
