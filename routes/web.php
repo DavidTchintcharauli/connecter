@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\ConversationController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\NavigationController;
@@ -10,6 +11,7 @@ use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\InserterController;
 use App\Http\Controllers\JobController;
+use App\Http\Controllers\MessageController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -67,6 +69,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/employees', [EmployeeController::class, 'index'])->name('employees');
+    Route::get('/messages', [MessageController::class, 'index'])->name('messages');
+    Route::post('/conversations', [ConversationController::class,'store'])->name('conversations.store');
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 });
 
