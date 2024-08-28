@@ -2,24 +2,15 @@ import { Head, useForm } from '@inertiajs/react';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 
 export default function CommentView({ auth, comment }) {
-    const { post } = useForm()
 
-    const handleTakeSuggest = () => {
-        post('/jobs', {
-            project_id: comment.project_id,
-            employed_id: auth.user.id,
-            offer_bids: comment.offer_bids,
-            offer_money: comment.offer_money,
-            time_need_to_start: comment.time_need_to_start,
-            time_unit_start: time_unit_start,
-            time_need_to_done: comment.time_need_to_done,
-            time_unit_done: comment.time_unit_done,
-            cover_letter: comment.cover_letter,
-            onSuccess: () => {
-                alert('Suggest take successfully!')
-            }
-        })
-    }
+    const { data, setData, post, processing, errors } = useForm({
+        comment_id: comment ? comment.id : '',
+    });
+
+    const handleTakeSuggest = (e) => {
+        e.preventDefault();
+        post(route('jobs.store'));
+    };
 
     return (
         <AuthenticatedLayout
@@ -37,7 +28,7 @@ export default function CommentView({ auth, comment }) {
                                     <h3 className="text-4xl font-extrabold text-gray-900 mb-6">Comment Details</h3>
                                     <button 
                                         className='px-4 m-3  rounded-full bg-green-600 text-white font-semibold shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 transition-colors duration-300 ease-in-out'
-                                        onClick={handleTakeSuggest}
+                                        onClick={handleTakeSuggest}    
                                     >
                                         Take Suggest
                                     </button>

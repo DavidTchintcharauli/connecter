@@ -9,6 +9,7 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\InserterController;
+use App\Http\Controllers\JobController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -38,8 +39,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', [NavigationController::class, 'dashboard'])->name('dashboard');
     Route::get('/employees', [NavigationController::class, 'employees'])->name('employees');
     Route::get('/requestPost', [NavigationController::class, 'requestPost'])->name('requestPost');
-    Route::get('/messages', [NavigationController::class, 'messages'])->middleware(['auth', 'verified', 'permission:Employer_permission'])->name('messages');
-    Route::get('/notifications', [NavigationController::class, 'notifications'])->name('notifications');
+    Route::get('/messages', [NavigationController::class, 'messages'])->name('messages');
+    Route::get('/notifications', [NavigationController::class, 'notifications'])->middleware(['auth', 'verified', 'permission:Employer_permission'])->name('notifications');
     Route::get('/browse', [NavigationController::class, 'browse'])->name('browse');
     Route::get('/jobs', [NavigationController::class, 'jobs'])->name('jobs');
     Route::get('/permissionMessages', [NavigationController::class, 'permissionMessages'])->name('permissionMessages');
@@ -67,6 +68,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/employees', [EmployeeController::class, 'index'])->name('employees');
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+});
+
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::post('/jobs', [JobController::class,'store'])->name('jobs.store');
 });
 
 Route::middleware('auth')->group(function () {

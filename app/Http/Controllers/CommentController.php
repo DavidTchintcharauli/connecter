@@ -22,8 +22,6 @@ class CommentController extends Controller
             'time_need_to_done' => 'required|integer',
             'time_unit_done' => 'required|in:days,hours,minutes',
             'cover_letter' => 'required|string|max:255',
-
-            
         ]);
 
         $comment = new Comment([
@@ -42,15 +40,6 @@ class CommentController extends Controller
 
         return redirect()->route('dashboard');
     }
-
-    // public function show($id)
-    // {
-    //     $comment = Comment::with('user')->findOrFail($id);
-
-    //     return Inertia::render('CommentView', [
-    //         'comment' => $comment
-    //     ]);
-    // }
 
     public function show($id)
     {
