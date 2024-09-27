@@ -13,11 +13,11 @@ class ProjectController extends Controller
     {
         $request->validate([
             'project_name' => 'required|string|max:255',
-            'project_description' => 'nullable|string',
-            'start_time' => 'nullable|date',
-            'end_time' => 'nullable|date',
-            'budget' => 'nullable|numeric',
-            'bids' => 'nullable|integer',
+            'project_description' => 'required|nullable|string',
+            'start_time' => 'required|nullable|date',
+            'end_time' => 'required|nullable|date',
+            'budget' => 'required|nullable|numeric',
+            'bids' => 'required|nullable|integer',
         ]);
 
         $project = new Project([

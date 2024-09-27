@@ -11,7 +11,9 @@ use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\InserterController;
 use App\Http\Controllers\JobController;
+use App\Http\Controllers\CarController;
 use App\Http\Controllers\MessageController;
+use App\Http\Controllers\TestConController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -42,7 +44,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/employees', [NavigationController::class, 'employees'])->name('employees');
     Route::get('/requestPost', [NavigationController::class, 'requestPost'])->name('requestPost');
     Route::get('/messages', [NavigationController::class, 'messages'])->name('messages');
-    Route::get('/notifications', [NavigationController::class, 'notifications'])->middleware(['auth', 'verified', 'permission:Employer_permission'])->name('notifications');
+    Route::get('/notifications', [NavigationController::class, 'notifications'])->middleware(['auth', 'verified', 'permission:employer_permission'])->name('notifications');
     Route::get('/browse', [NavigationController::class, 'browse'])->name('browse');
     Route::get('/jobs', [NavigationController::class, 'jobs'])->name('jobs');
     Route::get('/permissionMessages', [NavigationController::class, 'permissionMessages'])->name('permissionMessages');
@@ -60,6 +62,11 @@ Route::middleware(['auth', 'verified'])->group(function (){
     Route::post('/roles', [RoleController::class, 'store'])->name('roles.store');
 });
 
+Route::middleware(['auth', 'verified'])->group(function (){
+    Route::post('/conversations', [ConversationController::class, 'createOrGetConversation']);
+});
+
+
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/comment/{id}', [CommentController::class, 'show'])->name('commentView');
     Route::get('/commentView/{id}', [CommentController::class, 'show'])->name('commentView');
@@ -70,7 +77,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/employees', [EmployeeController::class, 'index'])->name('employees');
     Route::get('/messages', [MessageController::class, 'index'])->name('messages');
-    Route::post('/conversations', [ConversationController::class,'store'])->name('conversations.store');
+    Route::post('/messages', [MessageController::class, 'store'])->name('messages.store');
+    Route::get('/messages/{conversationId}', [MessageController::class, 'showMessages']);
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 });
 

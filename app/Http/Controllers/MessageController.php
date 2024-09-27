@@ -13,40 +13,58 @@ class MessageController extends Controller
 {
     public function store(Request $request)
     {
-        $validated = $request->validate([
+        $request->validate([
             'conversation_id' => 'required|exists:conversations,id',
-            'message_text' => 'required|string',
+            'sender_id' => 'required|exists:users,id',
+            'receiver_id' => 'required|exists:users,id',
+            'message_text' => 'required|string|max:1000',
         ]);
 
-        $message = Message::create([
-            'conversation_id' => $validated['conversation_id'],
-            'sender_id' => Auth::id(),
-            'receiver_id' => $validated['receiver_id'],
-            'message_text' => $validated['message_text'],
+        Message::create([
+            'conversation_id' => $request->conversation_id,
+            'sender_id' => $request->sender_id,
+            'receiver_id' => $request->receiver_id,
+            'message_text' => $request->message_text,
         ]);
 
-        $message = Message::create($validated);
-
-        return redirect()->back()->with('message', 'Message sent!');
+        return redirect()->back()->with('success', 'Message sent successfully!');
     }
 
-    public function show($conversationId)
+    public function show($id)
     {
-        $message = Message::Where('conversation_id', $conversationId)->get();
+        $conversation = Conversation::with(['employer', 'employed', 'messages'])->findOrFail($id);
 
-        return response()->json($message);
+        return Inertia::render('Messages', [
+            'auth' => [
+                'user' => auth()->user(), 
+            ],
+            'conversation' => $conversation,
+        ]);
     }
 
     public function index()
     {
-        $employees = User::select('users.id', 'users.name', 'users.email', 'roles.role_name')
-        ->join('user_roles', 'users.id', '=', 'user_roles.user_id')
-        ->join('roles', 'user_roles.role_id', '=', 'roles.id')
-        ->where('user_roles.role_id', 1)
-        ->get();
 
-        return Inertia::render("Messages", [
-            'employees' => $employees,
+        $userId = auth()->id();
+        $conversations = Conversation::where('employer_id', $userId)
+            ->orWhere('employed_id', $userId)
+            ->with(['employer', 'employed'])
+            ->get();
+
+        $messages = [];
+    
+        return Inertia::render('Messages', [
+            'auth' => [
+                'user' => auth()->user(), 
+            ],
+            'conversations' => $conversations,
+            'messages' => $messages,
         ]);
+    }
+
+    public function showMessages($conversationId)
+    {
+        $messages = Message::where('conversation_id', $conversationId)->get();
+        return response()->json($messages);
     }
 }

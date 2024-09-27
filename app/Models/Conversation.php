@@ -9,15 +9,7 @@ class Conversation extends Model
 {
     use HasFactory;
 
-    // protected $fillable = [
-    //     'sender_id',
-    //     'receiver_id',
-    // ];
-
-    protected $fillable = [
-        'employer_id',
-        'employed_id',
-    ];
+    protected $fillable = ['employer_id', 'employed_id'];
 
     public function messages()
     {
@@ -34,3 +26,4 @@ class Conversation extends Model
         return $this->belongsTo(User::class, 'employed_id');
     }
 }
+

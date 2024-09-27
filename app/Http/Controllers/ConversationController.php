@@ -4,54 +4,49 @@ namespace App\Http\Controllers;
 
 use App\Models\Conversation;
 use App\Models\User;
+use App\Models\Car;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\DB;
 
 class ConversationController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $conversations = auth()->user()->conversations;
 
-        return Inertia::render("Conversation/Index", [
+        $conversations = Conversation::with(['employer', 'employed'])->get();
+
+        return Inertia::render('Conversations', [
             'conversations' => $conversations,
         ]);
     }
 
-    public function store(Request $request)
+    public function createOrGetConversation(Request $request)
     {
-        $rules = [
-            'employer_id' => 'required|exists:users,id',
+        $request->validate([
             'employed_id' => 'required|exists:users,id',
-        ];
-
-        $validator = Validator::make($request->all(), $rules);
-        if ($validator->fails()) {
-            return response()->json(['errors' => $validator->errors()], 422);
-        }
-
-        $validated = $validator->validated();
-
-
-        try {
-            $existingConversation = Conversation::where([
-                ['employer_id', '=', $validated['employer_id']],
-                ['employed_id', '=', $validated['employed_id']],
-            ])->orWhere([
-                ['employer_id', '=', $validated['employed_id']],
-                ['employed_id', '=', $validated['employer_id']]
-            ])->exists();
-
-            if ($existingConversation) {
-                return response()->json(['message' => 'Conversation already exists'], 409);
-            }
-
-            Conversation::create($validated);
+        ]);
     
-            return response()->json(['message' => 'Conversation created successfully']);
-        } catch (\Exception $e) {
-            return response()->json(['message' => 'Failed to create conversation', 'error' => $e->getMessage()], 500);
+        $employerId = auth()->id();
+        $employedId = $request->input('employed_id');
+    
+        Log::info("Employer ID: $employerId, Employed ID: $employedId");
+    
+        $conversation = Conversation::where('employer_id', $employerId)
+            ->where('employed_id', $employedId)
+            ->first();
+    
+        if (!$conversation) {
+            $conversation = Conversation::create([
+                'employer_id' => $employerId,
+                'employed_id' => $employedId,
+            ]);
         }
+
+        return redirect()->route('messages');
+       
     }
 }
