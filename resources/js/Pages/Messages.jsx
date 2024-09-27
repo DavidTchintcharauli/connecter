@@ -15,24 +15,24 @@ export default function Messages({ auth, conversations }) {
     const handleConversationClick = (conversation) => {
         setSelectedConversation(conversation);
 
-        const receiverId = conversation.employer_id === auth.user.id 
-            ? conversation.employed_id 
+        const receiverId = conversation.employer_id === auth.user.id
+            ? conversation.employed_id
             : conversation.employer_id;
 
         setData({
-            ...data, 
+            ...data,
             receiver_id: receiverId,
             conversation_id: conversation.id,
         });
 
         fetch(`/messages/${conversation.id}`)
-        .then((response) => response.json())
-        .then((messagesData) => {
-            setMessages(messagesData);
-        })
-        .catch((error) => {
-            console.error('Error fetching messages:', error);
-        });
+            .then((response) => response.json())
+            .then((messagesData) => {
+                setMessages(messagesData);
+            })
+            .catch((error) => {
+                console.error('Error fetching messages:', error);
+            });
     };
 
     const handleSubmit = (e) => {
@@ -110,11 +110,15 @@ export default function Messages({ auth, conversations }) {
                             </div>
                             <div className="max-h-60 overflow-y-scroll p-2">
                                 {messages.map((msg) => (
-                                    <div key={msg.id} className={`p-2 my-1 rounded ${msg.sender_id === auth.user.id ? 'bg-blue-300 self-end' : 'bg-gray-100 self-start'}`}>
+                                    <div
+                                        key={msg.id}
+                                        className={`p-2 my-1 rounded ${msg.sender_id === auth.user.id ? 'bg-blue-300 justify-end' : 'bg-gray-100 justify-start'} flex`}
+                                    >
                                         <p>{msg.message_text}</p>
                                     </div>
                                 ))}
                             </div>
+
                             <form onSubmit={handleSubmit} className="flex mt-4">
                                 <input
                                     name="message_text"
