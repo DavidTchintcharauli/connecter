@@ -78,7 +78,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/employees', [EmployeeController::class, 'index'])->name('employees');
     Route::get('/messages', [MessageController::class, 'index'])->name('messages');
     Route::post('/messages', [MessageController::class, 'store'])->name('messages.store');
-    Route::get('/messages/{conversationId}', [MessageController::class, 'showMessages']);
+    Route::get('/messages/{conversationId}', action: [MessageController::class, 'showMessages']);
+    Route::delete('/messages/{message}', [MessageController::class, 'destroy'])->name('messages.destroy');
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 });
 

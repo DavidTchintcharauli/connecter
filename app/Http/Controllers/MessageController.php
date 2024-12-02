@@ -67,4 +67,17 @@ class MessageController extends Controller
         $messages = Message::where('conversation_id', $conversationId)->get();
         return response()->json($messages);
     }
+
+    public function destroy($messageId)
+    {
+        $message = Message::findOrFail($messageId);
+
+        if ($message->sender_id !== auth()->id()) {
+            return response()->json(['error' => 'Unauthorized'], 403);
+        }
+
+        $message->delete();
+
+        return response()->json(['success' => 'Message deleted successfully']);
+    }
 }

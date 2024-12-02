@@ -17,9 +17,7 @@ export default function Messages({ auth, conversations }) {
     const handleConversationClick = (conversation) => {
         setSelectedConversation(conversation);
 
-        const receiverId = conversation.employer_id === auth.user.id
-            ? conversation.employed_id
-            : conversation.employer_id;
+        const receiverId = conversation.employer_id === auth.user.id ? conversation.employed_id : conversation.employer_id;
 
         setData({
             ...data,
@@ -129,16 +127,23 @@ export default function Messages({ auth, conversations }) {
                             </div>
                             <div className="h-[590px] overflow-y-scroll p-2">
                                 {messages.map((msg) => (
-                                    <div key={msg.id} className="my-2">
-                                        <div
-                                            className={`p-2 rounded-full ${msg.sender_id === auth.user.id ? 'justify-end' : 'justify-start'} flex flex-col`}
-                                        >
-                                            <p className={`p-2 rounded-full ${msg.sender_id === auth.user.id ? 'bg-blue-300 pl-10 max-content self-end text-right max-w-max' : 'bg-gray-100 pr-10 text-left max-w-max'}`}>
-                                                {msg.message_text}
-                                            </p>
-                                            <span className={`text-sm text-gray-500 mt-1 ${msg.sender_id === auth.user.id ? 'self-end' : 'self-start'}`}>
-                                                {timeAgo(msg.created_at)}
-                                            </span>
+                                    <div>
+                                        <div key={msg.id} className="my-2">
+                                            <div
+                                                className={`p-2 rounded-full ${msg.sender_id === auth.user.id ? 'justify-end' : 'justify-start'} flex flex-col`}
+                                            >
+                                                <p className={`p-2 rounded-full ${msg.sender_id === auth.user.id ? 'bg-blue-300 pl-2 max-content self-end text-right max-w-max' : 'bg-gray-100 pr-10 text-left max-w-max'}`}>
+                                                    {msg.sender_id === auth.user.id && (
+                                                        <button onClick={() => handleDelete(msg.id)} className='mr-3 bg-red-500 text-white px-2 rounded-full '>
+                                                            X
+                                                        </button>
+                                                    )}
+                                                    {msg.message_text}
+                                                </p>
+                                                <span className={`text-sm text-gray-500 mt-1 ${msg.sender_id === auth.user.id ? 'self-end' : 'self-start'}`}>
+                                                    {timeAgo(msg.created_at)}
+                                                </span>
+                                            </div>
                                         </div>
                                     </div>
                                 ))}
